@@ -234,7 +234,7 @@
           <NavigationProperty Name="carrera" Relationship="Self.fk_has_carrera_Carrera1" FromRole="has_carrera" ToRole="carrera" />
           <NavigationProperty Name="corredor" Relationship="Self.fk_has_carrera_Corredor1" FromRole="has_carrera" ToRole="corredor" />
         </EntityType>
-        <EntityType Name="tiempo">
+        <EntityType Name="Tiempo">
           <Key>
             <PropertyRef Name="tiempo_id" />
           </Key>
@@ -270,7 +270,7 @@
         </Association>
         <Association Name="fk_Tiempo_Carrera1">
           <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
-          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <End Role="tiempo" Type="CMCTJModel.Tiempo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="carrera">
               <PropertyRef Name="carrera_id" />
@@ -306,7 +306,7 @@
         </Association>
         <Association Name="fk_Tiempo_Corredor1">
           <End Role="corredor" Type="Self.corredor" Multiplicity="1" />
-          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <End Role="tiempo" Type="CMCTJModel.Tiempo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="corredor">
               <PropertyRef Name="corredor_id" />
@@ -322,7 +322,7 @@
           <EntitySet Name="club" EntityType="Self.club" />
           <EntitySet Name="corredor" EntityType="Self.corredor" />
           <EntitySet Name="has_carrera" EntityType="Self.has_carrera" />
-          <EntitySet Name="tiempo" EntityType="Self.tiempo" />
+          <EntitySet Name="tiempo" EntityType="CMCTJModel.Tiempo" />
           <AssociationSet Name="fk_Categoria_Carrera1" Association="Self.fk_Categoria_Carrera1">
             <End Role="carrera" EntitySet="carrera" />
             <End Role="categoria" EntitySet="categoria" />
@@ -411,7 +411,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tiempo">
-            <EntityTypeMapping TypeName="CMCTJModel.tiempo">
+            <EntityTypeMapping TypeName="CMCTJModel.Tiempo">
               <MappingFragment StoreEntitySet="tiempo">
                 <ScalarProperty Name="tiempo_id" ColumnName="tiempo_id" />
                 <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />

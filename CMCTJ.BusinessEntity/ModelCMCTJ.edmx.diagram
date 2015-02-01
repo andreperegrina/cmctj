@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="CMCTJModel.club" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CMCTJModel.corredor" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CMCTJModel.has_carrera" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CMCTJModel.tiempo" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMCTJModel.Tiempo" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="CMCTJModel.fk_Categoria_Carrera1" ManuallyRouted="false" />
         <AssociationConnector Association="CMCTJModel.fk_has_carrera_Carrera1" ManuallyRouted="false" />
         <AssociationConnector Association="CMCTJModel.fk_Tiempo_Carrera1" ManuallyRouted="false" />

@@ -17,7 +17,7 @@ namespace CMCTJ.BusinessEntity
         public corredor()
         {
             this.has_carrera = new HashSet<has_carrera>();
-            this.tiempo = new HashSet<tiempo>();
+            this.tiempo = new HashSet<Tiempo>();
         }
     
         public int corredor_id { get; set; }
@@ -34,6 +34,6 @@ namespace CMCTJ.BusinessEntity
     
         public virtual club club { get; set; }
         public virtual ICollection<has_carrera> has_carrera { get; set; }
-        public virtual ICollection<tiempo> tiempo { get; set; }
+        public virtual ICollection<Tiempo> tiempo { get; set; }
     }
 }
