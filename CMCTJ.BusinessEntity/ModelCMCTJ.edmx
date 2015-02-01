@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CMCTJModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="carrera">
+          <Key>
+            <PropertyRef Name="carrera_id" />
+          </Key>
+          <Property Name="carrera_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fecha_creacion" Type="date" />
+          <Property Name="fecha_carrera" Type="date" />
+        </EntityType>
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="categoria_id" />
+          </Key>
+          <Property Name="categoria_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="carrera_id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="club">
+          <Key>
+            <PropertyRef Name="club_id" />
+          </Key>
+          <Property Name="club_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="corredor">
+          <Key>
+            <PropertyRef Name="corredor_id" />
+          </Key>
+          <Property Name="corredor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="club_id" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="apellido_paterno" Type="varchar" MaxLength="255" />
+          <Property Name="apellido_materno" Type="varchar" MaxLength="255" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="correo" Type="varchar" MaxLength="255" />
+          <Property Name="telefono" Type="varchar" MaxLength="255" />
+          <Property Name="facebook" Type="varchar" MaxLength="255" />
+          <Property Name="sexo" Type="int" />
+        </EntityType>
+        <EntityType Name="has_carrera">
+          <Key>
+            <PropertyRef Name="has_carrera_id" />
+          </Key>
+          <Property Name="has_carrera_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corredor_id" Type="int" Nullable="false" />
+          <Property Name="carrera_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tiempo">
+          <Key>
+            <PropertyRef Name="tiempo_id" />
+          </Key>
+          <Property Name="tiempo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corredor_id" Type="int" Nullable="false" />
+          <Property Name="carrera_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Categoria_Carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="categoria" Type="Self.categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="categoria">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Corredor_Club">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="corredor" Type="Self.corredor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="club_id" />
+            </Principal>
+            <Dependent Role="corredor">
+              <PropertyRef Name="club_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_has_carrera_Carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="has_carrera" Type="Self.has_carrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="has_carrera">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_has_carrera_Corredor1">
+          <End Role="corredor" Type="Self.corredor" Multiplicity="1" />
+          <End Role="has_carrera" Type="Self.has_carrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="corredor">
+              <PropertyRef Name="corredor_id" />
+            </Principal>
+            <Dependent Role="has_carrera">
+              <PropertyRef Name="corredor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tiempo_Carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="tiempo">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tiempo_Corredor1">
+          <End Role="corredor" Type="Self.corredor" Multiplicity="1" />
+          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="corredor">
+              <PropertyRef Name="corredor_id" />
+            </Principal>
+            <Dependent Role="tiempo">
+              <PropertyRef Name="corredor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CMCTJModelStoreContainer">
+          <EntitySet Name="carrera" EntityType="Self.carrera" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="club" EntityType="Self.club" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="corredor" EntityType="Self.corredor" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="has_carrera" EntityType="Self.has_carrera" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="tiempo" EntityType="Self.tiempo" Schema="cmctj" store:Type="Tables" />
+          <AssociationSet Name="fk_Categoria_Carrera1" Association="Self.fk_Categoria_Carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="categoria" EntitySet="categoria" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Corredor_Club" Association="Self.fk_Corredor_Club">
+            <End Role="club" EntitySet="club" />
+            <End Role="corredor" EntitySet="corredor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_has_carrera_Carrera1" Association="Self.fk_has_carrera_Carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="has_carrera" EntitySet="has_carrera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_has_carrera_Corredor1" Association="Self.fk_has_carrera_Corredor1">
+            <End Role="corredor" EntitySet="corredor" />
+            <End Role="has_carrera" EntitySet="has_carrera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tiempo_Carrera1" Association="Self.fk_Tiempo_Carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="tiempo" EntitySet="tiempo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tiempo_Corredor1" Association="Self.fk_Tiempo_Corredor1">
+            <End Role="corredor" EntitySet="corredor" />
+            <End Role="tiempo" EntitySet="tiempo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMCTJModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="carrera">
+          <Key>
+            <PropertyRef Name="carrera_id" />
+          </Key>
+          <Property Name="carrera_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha_creacion" Type="DateTime" />
+          <Property Name="fecha_carrera" Type="DateTime" />
+          <NavigationProperty Name="categoria" Relationship="Self.fk_Categoria_Carrera1" FromRole="carrera" ToRole="categoria" />
+          <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Carrera1" FromRole="carrera" ToRole="has_carrera" />
+          <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Carrera1" FromRole="carrera" ToRole="tiempo" />
+        </EntityType>
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="categoria_id" />
+          </Key>
+          <Property Name="categoria_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="carrera_id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="carrera" Relationship="Self.fk_Categoria_Carrera1" FromRole="categoria" ToRole="carrera" />
+        </EntityType>
+        <EntityType Name="club">
+          <Key>
+            <PropertyRef Name="club_id" />
+          </Key>
+          <Property Name="club_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="corredor" Relationship="Self.fk_Corredor_Club" FromRole="club" ToRole="corredor" />
+        </EntityType>
+        <EntityType Name="corredor">
+          <Key>
+            <PropertyRef Name="corredor_id" />
+          </Key>
+          <Property Name="corredor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="club_id" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="apellido_paterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_materno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" />
+          <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="facebook" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sexo" Type="Int32" />
+          <NavigationProperty Name="club" Relationship="Self.fk_Corredor_Club" FromRole="corredor" ToRole="club" />
+          <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Corredor1" FromRole="corredor" ToRole="has_carrera" />
+          <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Corredor1" FromRole="corredor" ToRole="tiempo" />
+        </EntityType>
+        <EntityType Name="has_carrera">
+          <Key>
+            <PropertyRef Name="has_carrera_id" />
+          </Key>
+          <Property Name="has_carrera_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corredor_id" Type="Int32" Nullable="false" />
+          <Property Name="carrera_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="carrera" Relationship="Self.fk_has_carrera_Carrera1" FromRole="has_carrera" ToRole="carrera" />
+          <NavigationProperty Name="corredor" Relationship="Self.fk_has_carrera_Corredor1" FromRole="has_carrera" ToRole="corredor" />
+        </EntityType>
+        <EntityType Name="tiempo">
+          <Key>
+            <PropertyRef Name="tiempo_id" />
+          </Key>
+          <Property Name="tiempo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corredor_id" Type="Int32" Nullable="false" />
+          <Property Name="carrera_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="carrera" Relationship="Self.fk_Tiempo_Carrera1" FromRole="tiempo" ToRole="carrera" />
+          <NavigationProperty Name="corredor" Relationship="Self.fk_Tiempo_Corredor1" FromRole="tiempo" ToRole="corredor" />
+        </EntityType>
+        <Association Name="fk_Categoria_Carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="categoria" Type="Self.categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="categoria">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_has_carrera_Carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="has_carrera" Type="Self.has_carrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="has_carrera">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tiempo_Carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="tiempo">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Corredor_Club">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="corredor" Type="Self.corredor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="club_id" />
+            </Principal>
+            <Dependent Role="corredor">
+              <PropertyRef Name="club_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_has_carrera_Corredor1">
+          <End Role="corredor" Type="Self.corredor" Multiplicity="1" />
+          <End Role="has_carrera" Type="Self.has_carrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="corredor">
+              <PropertyRef Name="corredor_id" />
+            </Principal>
+            <Dependent Role="has_carrera">
+              <PropertyRef Name="corredor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tiempo_Corredor1">
+          <End Role="corredor" Type="Self.corredor" Multiplicity="1" />
+          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="corredor">
+              <PropertyRef Name="corredor_id" />
+            </Principal>
+            <Dependent Role="tiempo">
+              <PropertyRef Name="corredor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="carrera" EntityType="Self.carrera" />
+          <EntitySet Name="categoria" EntityType="Self.categoria" />
+          <EntitySet Name="club" EntityType="Self.club" />
+          <EntitySet Name="corredor" EntityType="Self.corredor" />
+          <EntitySet Name="has_carrera" EntityType="Self.has_carrera" />
+          <EntitySet Name="tiempo" EntityType="Self.tiempo" />
+          <AssociationSet Name="fk_Categoria_Carrera1" Association="Self.fk_Categoria_Carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="categoria" EntitySet="categoria" />
+          </AssociationSet>
+          <AssociationSet Name="fk_has_carrera_Carrera1" Association="Self.fk_has_carrera_Carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="has_carrera" EntitySet="has_carrera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tiempo_Carrera1" Association="Self.fk_Tiempo_Carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="tiempo" EntitySet="tiempo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Corredor_Club" Association="Self.fk_Corredor_Club">
+            <End Role="club" EntitySet="club" />
+            <End Role="corredor" EntitySet="corredor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_has_carrera_Corredor1" Association="Self.fk_has_carrera_Corredor1">
+            <End Role="corredor" EntitySet="corredor" />
+            <End Role="has_carrera" EntitySet="has_carrera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tiempo_Corredor1" Association="Self.fk_Tiempo_Corredor1">
+            <End Role="corredor" EntitySet="corredor" />
+            <End Role="tiempo" EntitySet="tiempo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMCTJModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="carrera">
+            <EntityTypeMapping TypeName="CMCTJModel.carrera">
+              <MappingFragment StoreEntitySet="carrera">
+                <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="fecha_carrera" ColumnName="fecha_carrera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categoria">
+            <EntityTypeMapping TypeName="CMCTJModel.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+                <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="club">
+            <EntityTypeMapping TypeName="CMCTJModel.club">
+              <MappingFragment StoreEntitySet="club">
+                <ScalarProperty Name="club_id" ColumnName="club_id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="corredor">
+            <EntityTypeMapping TypeName="CMCTJModel.corredor">
+              <MappingFragment StoreEntitySet="corredor">
+                <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />
+                <ScalarProperty Name="club_id" ColumnName="club_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="has_carrera">
+            <EntityTypeMapping TypeName="CMCTJModel.has_carrera">
+              <MappingFragment StoreEntitySet="has_carrera">
+                <ScalarProperty Name="has_carrera_id" ColumnName="has_carrera_id" />
+                <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />
+                <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiempo">
+            <EntityTypeMapping TypeName="CMCTJModel.tiempo">
+              <MappingFragment StoreEntitySet="tiempo">
+                <ScalarProperty Name="tiempo_id" ColumnName="tiempo_id" />
+                <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />
+                <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

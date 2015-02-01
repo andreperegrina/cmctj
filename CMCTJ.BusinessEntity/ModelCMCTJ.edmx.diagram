@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a211783ba4d9441293e44b004d3dadd0" Name="Diagram1">
+        <EntityTypeShape EntityType="CMCTJModel.carrera" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMCTJModel.categoria" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMCTJModel.club" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMCTJModel.corredor" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMCTJModel.has_carrera" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMCTJModel.tiempo" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CMCTJModel.fk_Categoria_Carrera1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMCTJModel.fk_has_carrera_Carrera1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMCTJModel.fk_Tiempo_Carrera1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMCTJModel.fk_Corredor_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="CMCTJModel.fk_has_carrera_Corredor1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMCTJModel.fk_Tiempo_Corredor1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
