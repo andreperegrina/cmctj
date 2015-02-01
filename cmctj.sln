@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmctj", "cmctj\cmctj.csproj", "{4915FB1C-4067-4106-AB15-3479CB0B65BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCTJ.BusinessLogic", "CMCTJ.BusinessLogic\CMCTJ.BusinessLogic.csproj", "{571A6493-3860-4469-889C-BF0DC6ED006C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCTJ.BusinessEntity", "CMCTJ.BusinessEntity\CMCTJ.BusinessEntity.csproj", "{E943B19F-EBDA-4175-85C5-5D5E5AADD483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{4915FB1C-4067-4106-AB15-3479CB0B65BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4915FB1C-4067-4106-AB15-3479CB0B65BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4915FB1C-4067-4106-AB15-3479CB0B65BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{571A6493-3860-4469-889C-BF0DC6ED006C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{571A6493-3860-4469-889C-BF0DC6ED006C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{571A6493-3860-4469-889C-BF0DC6ED006C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{571A6493-3860-4469-889C-BF0DC6ED006C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E943B19F-EBDA-4175-85C5-5D5E5AADD483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E943B19F-EBDA-4175-85C5-5D5E5AADD483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E943B19F-EBDA-4175-85C5-5D5E5AADD483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E943B19F-EBDA-4175-85C5-5D5E5AADD483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

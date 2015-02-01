@@ -74,6 +74,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMCTJ.BusinessLogic\CMCTJ.BusinessLogic.csproj">
+      <Project>{571a6493-3860-4469-889c-bf0dc6ed006c}</Project>
+      <Name>CMCTJ.BusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
