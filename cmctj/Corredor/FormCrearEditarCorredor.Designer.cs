@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.rbHombre = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtFacebook = new System.Windows.Forms.TextBox();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dtFechaNacimiento = new DevExpress.XtraEditors.DateEdit();
             this.dtFecha = new DevExpress.XtraEditors.DateEdit();
@@ -58,6 +58,7 @@
             this.sglueDxClub = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.errPrValidar = new System.Windows.Forms.ErrorProvider();
+            this.gbSexo = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).BeginInit();
@@ -67,54 +68,55 @@
             ((System.ComponentModel.ISupportInitialize)(this.sglueDxClub.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrValidar)).BeginInit();
+            this.gbSexo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox3
+            // txtCorreo
             // 
-            this.textBox3.Location = new System.Drawing.Point(341, 200);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 20);
-            this.textBox3.TabIndex = 52;
+            this.txtCorreo.Location = new System.Drawing.Point(397, 200);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(199, 20);
+            this.txtCorreo.TabIndex = 52;
             // 
-            // textBox2
+            // txtFacebook
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 20);
-            this.textBox2.TabIndex = 51;
+            this.txtFacebook.Location = new System.Drawing.Point(89, 200);
+            this.txtFacebook.Name = "txtFacebook";
+            this.txtFacebook.Size = new System.Drawing.Size(199, 20);
+            this.txtFacebook.TabIndex = 51;
             // 
-            // radioButton1
+            // rbFemenino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(366, 58);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 17);
-            this.radioButton1.TabIndex = 50;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Femenino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbFemenino.AutoSize = true;
+            this.rbFemenino.Location = new System.Drawing.Point(85, 19);
+            this.rbFemenino.Name = "rbFemenino";
+            this.rbFemenino.Size = new System.Drawing.Size(71, 17);
+            this.rbFemenino.TabIndex = 50;
+            this.rbFemenino.TabStop = true;
+            this.rbFemenino.Text = "Femenino";
+            this.rbFemenino.UseVisualStyleBackColor = true;
             // 
-            // rbHombre
+            // rbMasculino
             // 
-            this.rbHombre.AutoSize = true;
-            this.rbHombre.Location = new System.Drawing.Point(268, 58);
-            this.rbHombre.Name = "rbHombre";
-            this.rbHombre.Size = new System.Drawing.Size(73, 17);
-            this.rbHombre.TabIndex = 49;
-            this.rbHombre.TabStop = true;
-            this.rbHombre.Text = "Masculino";
-            this.rbHombre.UseVisualStyleBackColor = true;
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(6, 19);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbMasculino.TabIndex = 49;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtTelefono
             // 
-            this.textBox1.Location = new System.Drawing.Point(366, 166);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 48;
+            this.txtTelefono.Location = new System.Drawing.Point(422, 166);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(174, 20);
+            this.txtTelefono.TabIndex = 48;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(464, 237);
+            this.btnAceptar.Location = new System.Drawing.Point(520, 237);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 53;
@@ -151,20 +153,21 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(17, 57);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(48, 13);
+            this.label14.Size = new System.Drawing.Size(43, 13);
             this.label14.TabIndex = 43;
-            this.label14.Text = "FECHA: ";
+            this.label14.Text = "Fecha: ";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(366, 89);
+            this.txtNombre.Location = new System.Drawing.Point(421, 89);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(174, 20);
             this.txtNombre.TabIndex = 42;
             // 
             // txtMaterno
             // 
-            this.txtMaterno.Location = new System.Drawing.Point(220, 89);
+            this.txtMaterno.Location = new System.Drawing.Point(246, 89);
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(140, 20);
             this.txtMaterno.TabIndex = 41;
@@ -172,29 +175,29 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(418, 112);
+            this.label13.Location = new System.Drawing.Point(473, 112);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 40;
-            this.label13.Text = "NOMBRE(S)";
+            this.label13.Text = "Nombre(s)";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(257, 112);
+            this.label12.Location = new System.Drawing.Point(269, 112);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.Size = new System.Drawing.Size(46, 13);
             this.label12.TabIndex = 39;
-            this.label12.Text = "MATERNO";
+            this.label12.Text = "Materno";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(112, 112);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 38;
-            this.label11.Text = "PATERNO ";
+            this.label11.Text = "Paterno ";
             // 
             // txtPaterno
             // 
@@ -206,88 +209,88 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(220, 60);
+            this.label9.Location = new System.Drawing.Point(243, 62);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 36;
-            this.label9.Text = "SEXO: ";
+            this.label9.Text = "Sexo: ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(294, 203);
+            this.label8.Location = new System.Drawing.Point(350, 203);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 35;
-            this.label8.Text = "E-MAIL: ";
+            this.label8.Text = "E-mail: ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(17, 203);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 34;
-            this.label7.Text = "FACEBOOK: ";
+            this.label7.Text = "Facebook: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(294, 169);
+            this.label6.Location = new System.Drawing.Point(350, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 33;
-            this.label6.Text = "TELEFONO: ";
+            this.label6.Text = "Telefono: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(294, 136);
+            this.label5.Location = new System.Drawing.Point(350, 136);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 32;
-            this.label5.Text = "CLUB: ";
+            this.label5.Text = "Club: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(17, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 31;
-            this.label4.Text = "CATEGORIA: ";
+            this.label4.Text = "Categoria: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 13);
+            this.label3.Size = new System.Drawing.Size(112, 13);
             this.label3.TabIndex = 30;
-            this.label3.Text = "FECHA DE NACIMIENTO: ";
+            this.label3.Text = "Fecha de nacimiento: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 29;
-            this.label2.Text = "NOMBRE: ";
+            this.label2.Text = "Nombre: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(229, 17);
+            this.label1.Location = new System.Drawing.Point(281, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 28;
-            this.label1.Text = "INSCRIPCION";
+            this.label1.Text = "Inscripcion";
             // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(383, 237);
+            this.btnCancelar.Location = new System.Drawing.Point(439, 237);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 54;
@@ -301,6 +304,8 @@
             this.sglueDxCategoria.Name = "sglueDxCategoria";
             this.sglueDxCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sglueDxCategoria.Properties.DisplayMember = "Nombre";
+            this.sglueDxCategoria.Properties.ValueMember = "CategoriaId";
             this.sglueDxCategoria.Properties.View = this.searchLookUpEdit1View;
             this.sglueDxCategoria.Size = new System.Drawing.Size(199, 20);
             this.sglueDxCategoria.TabIndex = 55;
@@ -314,10 +319,12 @@
             // 
             // sglueDxClub
             // 
-            this.sglueDxClub.Location = new System.Drawing.Point(341, 133);
+            this.sglueDxClub.Location = new System.Drawing.Point(397, 133);
             this.sglueDxClub.Name = "sglueDxClub";
             this.sglueDxClub.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sglueDxClub.Properties.DisplayMember = "Nombre";
+            this.sglueDxClub.Properties.ValueMember = "ClubId";
             this.sglueDxClub.Properties.View = this.searchLookUpEdit2View;
             this.sglueDxClub.Size = new System.Drawing.Size(198, 20);
             this.sglueDxClub.TabIndex = 56;
@@ -334,21 +341,30 @@
             this.errPrValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errPrValidar.ContainerControl = this;
             // 
+            // gbSexo
+            // 
+            this.gbSexo.Controls.Add(this.rbMasculino);
+            this.gbSexo.Controls.Add(this.rbFemenino);
+            this.gbSexo.Location = new System.Drawing.Point(296, 39);
+            this.gbSexo.Name = "gbSexo";
+            this.gbSexo.Size = new System.Drawing.Size(200, 44);
+            this.gbSexo.TabIndex = 57;
+            this.gbSexo.TabStop = false;
+            // 
             // FormCrearEditarCorredor
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(557, 291);
+            this.ClientSize = new System.Drawing.Size(648, 291);
+            this.Controls.Add(this.gbSexo);
             this.Controls.Add(this.sglueDxClub);
             this.Controls.Add(this.sglueDxCategoria);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.rbHombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtFacebook);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dtFechaNacimiento);
             this.Controls.Add(this.dtFecha);
@@ -379,6 +395,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sglueDxClub.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrValidar)).EndInit();
+            this.gbSexo.ResumeLayout(false);
+            this.gbSexo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,11 +404,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton rbHombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtFacebook;
+        private System.Windows.Forms.RadioButton rbFemenino;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnAceptar;
         private DevExpress.XtraEditors.DateEdit dtFechaNacimiento;
         private DevExpress.XtraEditors.DateEdit dtFecha;
@@ -416,5 +434,6 @@
         private DevExpress.XtraEditors.SearchLookUpEdit sglueDxClub;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
         private System.Windows.Forms.ErrorProvider errPrValidar;
+        private System.Windows.Forms.GroupBox gbSexo;
     }
 }
