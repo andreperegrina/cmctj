@@ -1,4 +1,5 @@
-﻿using CMCTJ.BusinessEntity;
+﻿using cmctj.Utils;
+using CMCTJ.BusinessEntity;
 using CMCTJ.BusinessLogic.Manager;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace cmctj
             ClubManager nuevoClub = new ClubManager();
             club nuevo = new club() { nombre = "", descripcion = "" };
             nuevoClub.Save(nuevo);
+
+            
         }
     }
 }
