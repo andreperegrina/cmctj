@@ -23,6 +23,7 @@ namespace CMCTJ.BusinessEntity
         public int categoria_id { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
+        public string alias { get; set; }
     
         public virtual ICollection<corredor> corredor { get; set; }
         public virtual ICollection<tiempo> tiempo { get; set; }
