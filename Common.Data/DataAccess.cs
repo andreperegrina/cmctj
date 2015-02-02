@@ -19,11 +19,11 @@ namespace Common.Data
     {
 
 
-        public cmctjEntities DataContext { get; set; }
+        public CMCTJEntities DataContext { get; set; }
 
         public DataAccess()
         {
-            DataContext = new cmctjEntities();
+            DataContext = new CMCTJEntities();
         }
 
         public bool ExistObject(Func<TEntity, bool> predicate)

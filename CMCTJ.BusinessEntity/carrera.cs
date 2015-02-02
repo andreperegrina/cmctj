@@ -16,7 +16,6 @@ namespace CMCTJ.BusinessEntity
     {
         public carrera()
         {
-            this.categoria = new HashSet<categoria>();
             this.has_carrera = new HashSet<has_carrera>();
             this.tiempo = new HashSet<tiempo>();
         }
@@ -27,7 +26,6 @@ namespace CMCTJ.BusinessEntity
         public System.DateTime fecha_creacion { get; set; }
         public System.DateTime fecha_carrera { get; set; }
     
-        public virtual ICollection<categoria> categoria { get; set; }
         public virtual ICollection<has_carrera> has_carrera { get; set; }
         public virtual ICollection<tiempo> tiempo { get; set; }
     }

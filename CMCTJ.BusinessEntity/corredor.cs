@@ -31,7 +31,9 @@ namespace CMCTJ.BusinessEntity
         public string telefono { get; set; }
         public string facebook { get; set; }
         public int sexo { get; set; }
+        public int categoria_id { get; set; }
     
+        public virtual categoria categoria { get; set; }
         public virtual club club { get; set; }
         public virtual ICollection<has_carrera> has_carrera { get; set; }
         public virtual ICollection<tiempo> tiempo { get; set; }

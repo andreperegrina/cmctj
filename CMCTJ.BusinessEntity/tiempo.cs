@@ -17,8 +17,11 @@ namespace CMCTJ.BusinessEntity
         public int tiempo_id { get; set; }
         public int corredor_id { get; set; }
         public int carrera_id { get; set; }
+        public System.DateTime tiempo_corredor { get; set; }
+        public int categoria_id { get; set; }
     
         public virtual carrera carrera { get; set; }
+        public virtual categoria categoria { get; set; }
         public virtual corredor corredor { get; set; }
     }
 }

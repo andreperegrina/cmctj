@@ -20,7 +20,6 @@
             <PropertyRef Name="categoria_id" />
           </Key>
           <Property Name="categoria_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="carrera_id" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
@@ -47,6 +46,7 @@
           <Property Name="telefono" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="facebook" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="sexo" Type="int" Nullable="false" />
+          <Property Name="categoria_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="has_carrera">
           <Key>
@@ -63,16 +63,18 @@
           <Property Name="tiempo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="corredor_id" Type="int" Nullable="false" />
           <Property Name="carrera_id" Type="int" Nullable="false" />
+          <Property Name="tiempo_corredor" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="categoria_id" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="fk_Categoria_Carrera1">
-          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
-          <End Role="categoria" Type="Self.categoria" Multiplicity="*" />
+        <Association Name="fk_Corredor_Categoria1">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="corredor" Type="Self.corredor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="carrera">
-              <PropertyRef Name="carrera_id" />
+            <Principal Role="categoria">
+              <PropertyRef Name="categoria_id" />
             </Principal>
-            <Dependent Role="categoria">
-              <PropertyRef Name="carrera_id" />
+            <Dependent Role="corredor">
+              <PropertyRef Name="categoria_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -124,6 +126,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_Tiempo_Categoria1">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="categoria_id" />
+            </Principal>
+            <Dependent Role="tiempo">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_Tiempo_Corredor1">
           <End Role="corredor" Type="Self.corredor" Multiplicity="1" />
           <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
@@ -143,9 +157,9 @@
           <EntitySet Name="corredor" EntityType="Self.corredor" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="has_carrera" EntityType="Self.has_carrera" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="tiempo" EntityType="Self.tiempo" Schema="cmctj" store:Type="Tables" />
-          <AssociationSet Name="fk_Categoria_Carrera1" Association="Self.fk_Categoria_Carrera1">
-            <End Role="carrera" EntitySet="carrera" />
+          <AssociationSet Name="fk_Corredor_Categoria1" Association="Self.fk_Corredor_Categoria1">
             <End Role="categoria" EntitySet="categoria" />
+            <End Role="corredor" EntitySet="corredor" />
           </AssociationSet>
           <AssociationSet Name="fk_Corredor_Club" Association="Self.fk_Corredor_Club">
             <End Role="club" EntitySet="club" />
@@ -161,6 +175,10 @@
           </AssociationSet>
           <AssociationSet Name="fk_Tiempo_Carrera1" Association="Self.fk_Tiempo_Carrera1">
             <End Role="carrera" EntitySet="carrera" />
+            <End Role="tiempo" EntitySet="tiempo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tiempo_Categoria1" Association="Self.fk_Tiempo_Categoria1">
+            <End Role="categoria" EntitySet="categoria" />
             <End Role="tiempo" EntitySet="tiempo" />
           </AssociationSet>
           <AssociationSet Name="fk_Tiempo_Corredor1" Association="Self.fk_Tiempo_Corredor1">
@@ -182,7 +200,6 @@
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fecha_creacion" Type="DateTime" Nullable="false" />
           <Property Name="fecha_carrera" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="categoria" Relationship="Self.fk_Categoria_Carrera1" FromRole="carrera" ToRole="categoria" />
           <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Carrera1" FromRole="carrera" ToRole="has_carrera" />
           <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Carrera1" FromRole="carrera" ToRole="tiempo" />
         </EntityType>
@@ -191,10 +208,10 @@
             <PropertyRef Name="categoria_id" />
           </Key>
           <Property Name="categoria_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="carrera_id" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="carrera" Relationship="Self.fk_Categoria_Carrera1" FromRole="categoria" ToRole="carrera" />
+          <NavigationProperty Name="corredor" Relationship="Self.fk_Corredor_Categoria1" FromRole="categoria" ToRole="corredor" />
+          <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Categoria1" FromRole="categoria" ToRole="tiempo" />
         </EntityType>
         <EntityType Name="club">
           <Key>
@@ -220,6 +237,8 @@
           <Property Name="telefono" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="facebook" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="sexo" Type="Int32" Nullable="false" />
+          <Property Name="categoria_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="categoria" Relationship="Self.fk_Corredor_Categoria1" FromRole="corredor" ToRole="categoria" />
           <NavigationProperty Name="club" Relationship="Self.fk_Corredor_Club" FromRole="corredor" ToRole="club" />
           <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Corredor1" FromRole="corredor" ToRole="has_carrera" />
           <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Corredor1" FromRole="corredor" ToRole="tiempo" />
@@ -241,21 +260,12 @@
           <Property Name="tiempo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="corredor_id" Type="Int32" Nullable="false" />
           <Property Name="carrera_id" Type="Int32" Nullable="false" />
+          <Property Name="tiempo_corredor" Type="DateTime" Nullable="false" />
+          <Property Name="categoria_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="carrera" Relationship="Self.fk_Tiempo_Carrera1" FromRole="tiempo" ToRole="carrera" />
+          <NavigationProperty Name="categoria" Relationship="Self.fk_Tiempo_Categoria1" FromRole="tiempo" ToRole="categoria" />
           <NavigationProperty Name="corredor" Relationship="Self.fk_Tiempo_Corredor1" FromRole="tiempo" ToRole="corredor" />
         </EntityType>
-        <Association Name="fk_Categoria_Carrera1">
-          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
-          <End Role="categoria" Type="Self.categoria" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="carrera">
-              <PropertyRef Name="carrera_id" />
-            </Principal>
-            <Dependent Role="categoria">
-              <PropertyRef Name="carrera_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_has_carrera_Carrera1">
           <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
           <End Role="has_carrera" Type="Self.has_carrera" Multiplicity="*" />
@@ -277,6 +287,30 @@
             </Principal>
             <Dependent Role="tiempo">
               <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Corredor_Categoria1">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="corredor" Type="Self.corredor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="categoria_id" />
+            </Principal>
+            <Dependent Role="corredor">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Tiempo_Categoria1">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="tiempo" Type="Self.tiempo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="categoria_id" />
+            </Principal>
+            <Dependent Role="tiempo">
+              <PropertyRef Name="categoria_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -316,23 +350,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="cmctjEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CMCTJEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="carrera" EntityType="Self.carrera" />
           <EntitySet Name="categoria" EntityType="Self.categoria" />
           <EntitySet Name="club" EntityType="Self.club" />
           <EntitySet Name="corredor" EntityType="Self.corredor" />
           <EntitySet Name="has_carrera" EntityType="Self.has_carrera" />
           <EntitySet Name="tiempo" EntityType="Self.tiempo" />
-          <AssociationSet Name="fk_Categoria_Carrera1" Association="Self.fk_Categoria_Carrera1">
-            <End Role="carrera" EntitySet="carrera" />
-            <End Role="categoria" EntitySet="categoria" />
-          </AssociationSet>
           <AssociationSet Name="fk_has_carrera_Carrera1" Association="Self.fk_has_carrera_Carrera1">
             <End Role="carrera" EntitySet="carrera" />
             <End Role="has_carrera" EntitySet="has_carrera" />
           </AssociationSet>
           <AssociationSet Name="fk_Tiempo_Carrera1" Association="Self.fk_Tiempo_Carrera1">
             <End Role="carrera" EntitySet="carrera" />
+            <End Role="tiempo" EntitySet="tiempo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Corredor_Categoria1" Association="Self.fk_Corredor_Categoria1">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="corredor" EntitySet="corredor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Tiempo_Categoria1" Association="Self.fk_Tiempo_Categoria1">
+            <End Role="categoria" EntitySet="categoria" />
             <End Role="tiempo" EntitySet="tiempo" />
           </AssociationSet>
           <AssociationSet Name="fk_Corredor_Club" Association="Self.fk_Corredor_Club">
@@ -353,7 +391,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="cmctjModelStoreContainer" CdmEntityContainer="cmctjEntities">
+        <EntityContainerMapping StorageEntityContainer="cmctjModelStoreContainer" CdmEntityContainer="CMCTJEntities">
           <EntitySetMapping Name="carrera">
             <EntityTypeMapping TypeName="cmctjModel.carrera">
               <MappingFragment StoreEntitySet="carrera">
@@ -369,7 +407,6 @@
             <EntityTypeMapping TypeName="cmctjModel.categoria">
               <MappingFragment StoreEntitySet="categoria">
                 <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
-                <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
               </MappingFragment>
@@ -398,6 +435,7 @@
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="facebook" ColumnName="facebook" />
                 <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -416,6 +454,8 @@
                 <ScalarProperty Name="tiempo_id" ColumnName="tiempo_id" />
                 <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />
                 <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
+                <ScalarProperty Name="tiempo_corredor" ColumnName="tiempo_corredor" />
+                <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

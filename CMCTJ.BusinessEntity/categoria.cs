@@ -14,11 +14,17 @@ namespace CMCTJ.BusinessEntity
     
     public partial class categoria
     {
+        public categoria()
+        {
+            this.corredor = new HashSet<corredor>();
+            this.tiempo = new HashSet<tiempo>();
+        }
+    
         public int categoria_id { get; set; }
-        public int carrera_id { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
     
-        public virtual carrera carrera { get; set; }
+        public virtual ICollection<corredor> corredor { get; set; }
+        public virtual ICollection<tiempo> tiempo { get; set; }
     }
 }

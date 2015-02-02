@@ -13,10 +13,10 @@ namespace CMCTJ.BusinessEntity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class cmctjEntities : DbContext
+    public partial class CMCTJEntities : DbContext
     {
-        public cmctjEntities()
-            : base("name=cmctjEntities")
+        public CMCTJEntities()
+            : base("name=CMCTJEntities")
         {
         }
     
