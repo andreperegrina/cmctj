@@ -11,7 +11,7 @@ namespace CMCTJ.BusinessLogic.Manager
     public class GeneralManager<TEntity> where TEntity : class
     {
 
-        readonly DataAccess<TEntity> entityDAO = new DataAccess<TEntity>();
+        protected readonly DataAccess<TEntity> entityDAO = new DataAccess<TEntity>();
 
         public List<TEntity> GetAll()
         {
