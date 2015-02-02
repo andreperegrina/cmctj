@@ -9,5 +9,9 @@ namespace CMCTJ.BusinessLogic.Manager
 {
     public class CorredorManager : GeneralManager<corredor>
     {
+        public corredor GetCorredorById(int corredorID)
+        {
+            return entityDAO.Find(e=>e.corredor_id==corredorID);
+        }
     }
 }
