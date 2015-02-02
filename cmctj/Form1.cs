@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CMCTJ.BusinessEntity;
+using CMCTJ.BusinessLogic.Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace cmctj
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClubManager nuevoClub = new ClubManager();
+            club nuevo = new club() { nombre = "", descripcion = "" };
+            nuevoClub.Save(nuevo);
         }
     }
 }

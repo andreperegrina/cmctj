@@ -18,17 +18,17 @@ namespace CMCTJ.BusinessEntity
         {
             this.categoria = new HashSet<categoria>();
             this.has_carrera = new HashSet<has_carrera>();
-            this.tiempo = new HashSet<Tiempo>();
+            this.tiempo = new HashSet<tiempo>();
         }
     
         public int carrera_id { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        public Nullable<System.DateTime> fecha_creacion { get; set; }
-        public Nullable<System.DateTime> fecha_carrera { get; set; }
+        public System.DateTime fecha_creacion { get; set; }
+        public System.DateTime fecha_carrera { get; set; }
     
         public virtual ICollection<categoria> categoria { get; set; }
         public virtual ICollection<has_carrera> has_carrera { get; set; }
-        public virtual ICollection<Tiempo> tiempo { get; set; }
+        public virtual ICollection<tiempo> tiempo { get; set; }
     }
 }

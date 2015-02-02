@@ -17,23 +17,23 @@ namespace CMCTJ.BusinessEntity
         public corredor()
         {
             this.has_carrera = new HashSet<has_carrera>();
-            this.tiempo = new HashSet<Tiempo>();
+            this.tiempo = new HashSet<tiempo>();
         }
     
         public int corredor_id { get; set; }
         public int club_id { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public System.DateTime fecha { get; set; }
         public string apellido_paterno { get; set; }
         public string apellido_materno { get; set; }
         public string nombre { get; set; }
-        public Nullable<System.DateTime> fecha_nacimiento { get; set; }
+        public System.DateTime fecha_nacimiento { get; set; }
         public string correo { get; set; }
         public string telefono { get; set; }
         public string facebook { get; set; }
-        public Nullable<int> sexo { get; set; }
+        public int sexo { get; set; }
     
         public virtual club club { get; set; }
         public virtual ICollection<has_carrera> has_carrera { get; set; }
-        public virtual ICollection<Tiempo> tiempo { get; set; }
+        public virtual ICollection<tiempo> tiempo { get; set; }
     }
 }

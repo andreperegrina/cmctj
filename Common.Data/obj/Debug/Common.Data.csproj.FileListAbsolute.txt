@@ -1,0 +1,10 @@
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\obj\Debug\Common.Data.csprojResolveAssemblyReference.cache
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\Common.Data.dll.config
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\Common.Data.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\Common.Data.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\EntityFramework.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\IPEBCSCV.BusinessEntity.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\IPEBCSCV.BusinessEntity.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\bin\Debug\EntityFramework.xml
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\obj\Debug\Common.Data.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common.Data\obj\Debug\Common.Data.pdb

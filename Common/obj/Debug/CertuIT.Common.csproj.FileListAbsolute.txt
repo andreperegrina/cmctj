@@ -1,0 +1,75 @@
+C:\Users\INSPIRON\Documents\Visual Studio 2010\Projects\SII-UAS\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\INSPIRON\Documents\Visual Studio 2010\Projects\SII-UAS\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\INSPIRON\Documents\Visual Studio 2010\Projects\SII-UAS\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\INSPIRON\Documents\Visual Studio 2010\Projects\SII-UAS\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\INSPIRON\Documents\Visual Studio 2010\Projects\SII-UAS\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\INSPIRON\Desktop\SIIFT - CertuIT Indicadores\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\INSPIRON\Desktop\SIIFT - CertuIT Indicadores\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\INSPIRON\Desktop\SIIFT - CertuIT Indicadores\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\INSPIRON\Desktop\SIIFT - CertuIT Indicadores\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\INSPIRON\Desktop\SIIFT - CertuIT Indicadores\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\certusii\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\certusii\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\certusii\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\certusii\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\certusii\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\certusii\Desktop\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\certusii\Desktop\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\certusii\Desktop\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\certusii\Desktop\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\certusii\Desktop\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-CertuIT-Indicadores_UABC\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-GOBBC\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-GOBBC\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-GOBBC\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-GOBBC\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SIIFT-GOBBC\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\JOSE\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\itextsharp.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\itextsharp.pdfa.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\itextsharp.xtra.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\SGO-TEP.Entity.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\bin\Debug\SGO-TEP.Entity.pdb
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\obj\Debug\CertuIT.Common.csprojResolveAssemblyReference.cache
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGO-TEP\CertuIT.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGOTEP\certuit.common\bin\Debug\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGOTEP\certuit.common\bin\Debug\CertuIT.Common.pdb
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGOTEP\certuit.common\obj\Debug\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2010\Projects\SGOTEP\certuit.common\obj\Debug\CertuIT.Common.pdb
+ul.links-uabc-template li a
+C:\Users\André\Documents\Visual Studio 2010\Projects\SGOTEP\Codigo\SGOTEP\Certuit.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2010\Projects\SGOTEP\Codigo\SGOTEP\Certuit.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2010\Projects\SGOTEP\Codigo\SGOTEP\Certuit.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2010\Projects\SGOTEP\Codigo\SGOTEP\Certuit.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2010\Projects\SGOTEP\Codigo\SGOTEP\certuit.common\bin\Debug\CertuIT.Common.dll.config
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\bin\Debug\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\bin\Debug\CertuIT.Common.pdb
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\obj\Debug\Certuit.Common.csprojResolveAssemblyReference.cache
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\obj\Debug\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\obj\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2010\Projects\SGOTEP\Codigo\SGOTEP\certuit.common\obj\Debug\Certuit.Common.csprojResolveAssemblyReference.cache
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Debug\CertuIT.Common.dll.config
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Debug\itextsharp.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Debug\itextsharp.pdfa.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Debug\itextsharp.xtra.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\obj\Debug\Certuit.Common.csprojResolveAssemblyReference.cache
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\obj\Debug\CertuIT.Common.pdb

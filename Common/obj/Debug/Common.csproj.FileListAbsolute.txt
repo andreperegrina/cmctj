@@ -1,0 +1,18 @@
+C:\Users\André\Documents\No borrar\Certuit.Common\bin\Debug\CertuIT.Common.dll.config
+C:\Users\André\Documents\No borrar\Certuit.Common\bin\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\No borrar\Certuit.Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\No borrar\Certuit.Common\bin\Debug\itextsharp.dll
+C:\Users\André\Documents\No borrar\Certuit.Common\bin\Debug\itextsharp.pdfa.dll
+C:\Users\André\Documents\No borrar\Certuit.Common\bin\Debug\itextsharp.xtra.dll
+C:\Users\André\Documents\No borrar\Certuit.Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\André\Documents\No borrar\Certuit.Common\obj\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\No borrar\Certuit.Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\bin\Debug\CertuIT.Common.dll.config
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\bin\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\bin\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\bin\Debug\itextsharp.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\bin\Debug\itextsharp.pdfa.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\bin\Debug\itextsharp.xtra.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\obj\Debug\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\obj\Debug\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\IPEBCSCV\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

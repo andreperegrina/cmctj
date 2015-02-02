@@ -1,0 +1,16 @@
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\bin\Release\CertuIT.Common.dll
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\bin\Release\CertuIT.Common.pdb
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\obj\Release\ResolveAssemblyReference.cache
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\obj\Release\CertuIT.Common.dll
+C:\Users\INSPIRON\Desktop\SII-UAT - copia\CertuIT.Common\obj\Release\CertuIT.Common.pdb
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\obj\Release\CertuIT.Common.dll
+C:\Users\CertusII\Documents\Visual Studio 2012\Projects\SGOTEP\certuit.common\obj\Release\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Release\CertuIT.Common.dll.config
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Release\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Release\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Release\itextsharp.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Release\itextsharp.pdfa.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\bin\Release\itextsharp.xtra.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\obj\Release\CertuIT.Common.dll
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\obj\Release\CertuIT.Common.pdb
+C:\Users\André\Documents\Visual Studio 2012\Projects\UABCSAB\Certuit.Common\obj\Release\Certuit.Common.csprojResolveAssemblyReference.cache
