@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace CMCTJ.BusinessLogic.Manager
 {
-    public class CarreraManager : GeneralManager<categoria>
+    public class CarreraManager : GeneralManager<carrera>
     {
+
+        public carrera GetCarreraActual()
+        {
+            return entityDAO.Find(e=>e.carrera_id==1);
+        }
     }
 }
