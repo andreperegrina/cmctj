@@ -404,6 +404,18 @@ namespace Common.Data
         }
 
 
+        public List<TEntity> executeQuery(string query)
+        {
+            try
+            {
+
+                return DataContext.Database.SqlQuery<TEntity>(query).ToList<TEntity>();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
     }
 }
