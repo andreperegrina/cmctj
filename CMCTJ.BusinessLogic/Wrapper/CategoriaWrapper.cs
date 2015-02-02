@@ -10,6 +10,7 @@ namespace CMCTJ.BusinessLogic.Wrapper
     {
         public String Nombre { get; set; }
         public String Descripcion { get; set; }
+        public String Alias { get; set; }
         public int CategoriaId { get; set; }
     }
 }
