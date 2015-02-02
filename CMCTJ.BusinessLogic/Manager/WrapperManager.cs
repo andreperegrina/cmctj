@@ -22,13 +22,14 @@ namespace CMCTJ.BusinessLogic.Manager
             //newList.Add(new CategoriaWrapper() {Nombre="Categoria 1",Descripcion="Cat",CategoriaId=1 });
             //return newList;
             //CODIGO REAL
-            return categoriaWrapperDAO.executeQuery("select * from categoria");
+            
+            return categoriaWrapperDAO.executeQuery("select categoria_id as categoriaid,nombre,descripcion,alias from categoria");
         }
 
         public List<ClubWrapper> GetAllClubWrapper()
         {
             DataAccess<ClubWrapper> clubWrapperDAO = new DataAccess<ClubWrapper>();
-            return clubWrapperDAO.executeQuery("select * from categoria");
+            return clubWrapperDAO.executeQuery("select clubid,nombre,descripcion from categoria");
         }
     }
 }
