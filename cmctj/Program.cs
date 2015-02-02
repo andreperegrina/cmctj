@@ -17,7 +17,7 @@ namespace cmctj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCrearEditarCorredor());
+            Application.Run(new FormMain());
 
 
         }
