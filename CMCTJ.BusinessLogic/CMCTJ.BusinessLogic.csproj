@@ -39,7 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\CarreraManager.cs" />
+    <Compile Include="Manager\CategoriaManager.cs" />
+    <Compile Include="Manager\ClubManager.cs" />
+    <Compile Include="Manager\CorredorManager.cs" />
+    <Compile Include="Manager\GeneralManager.cs" />
+    <Compile Include="Manager\TiempoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMCTJ.BusinessEntity\CMCTJ.BusinessEntity.csproj">
+      <Project>{e943b19f-ebda-4175-85c5-5d5e5aadd483}</Project>
+      <Name>CMCTJ.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Data\Common.Data.csproj">
+      <Project>{72285754-6766-4b70-b703-c1b28b19e30f}</Project>
+      <Name>Common.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

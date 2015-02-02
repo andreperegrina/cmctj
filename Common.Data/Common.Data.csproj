@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IPEBCSCV.BusinessEntity\IPEBCSCV.BusinessEntity.csproj">
-      <Project>{268b8a5d-5839-4eb3-99f0-d9a36f95b67d}</Project>
-      <Name>IPEBCSCV.BusinessEntity</Name>
+    <ProjectReference Include="..\CMCTJ.BusinessEntity\CMCTJ.BusinessEntity.csproj">
+      <Project>{e943b19f-ebda-4175-85c5-5d5e5aadd483}</Project>
+      <Name>CMCTJ.BusinessEntity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

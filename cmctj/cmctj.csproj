@@ -78,6 +78,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CMCTJ.BusinessEntity\CMCTJ.BusinessEntity.csproj">
+      <Project>{e943b19f-ebda-4175-85c5-5d5e5aadd483}</Project>
+      <Name>CMCTJ.BusinessEntity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CMCTJ.BusinessLogic\CMCTJ.BusinessLogic.csproj">
       <Project>{571a6493-3860-4469-889c-bf0dc6ed006c}</Project>
       <Name>CMCTJ.BusinessLogic</Name>
