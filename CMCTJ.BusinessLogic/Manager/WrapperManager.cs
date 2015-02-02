@@ -29,7 +29,7 @@ namespace CMCTJ.BusinessLogic.Manager
         public List<ClubWrapper> GetAllClubWrapper()
         {
             DataAccess<ClubWrapper> clubWrapperDAO = new DataAccess<ClubWrapper>();
-            return clubWrapperDAO.executeQuery("select club_id as clubid,nombre,descripcion from categoria");
+            return clubWrapperDAO.executeQuery("select club_id as clubid,nombre,descripcion from club");
         }
     }
 }
