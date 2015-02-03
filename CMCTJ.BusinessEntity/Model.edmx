@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="carrera_inicio_categoria_id" />
           </Key>
-          <Property Name="carrera_inicio_categoria_id" Type="int" Nullable="false" />
+          <Property Name="carrera_inicio_categoria_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tiempo_inicio_carrera" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="carrera_id" Type="int" Nullable="false" />
           <Property Name="categoria_id" Type="int" Nullable="false" />

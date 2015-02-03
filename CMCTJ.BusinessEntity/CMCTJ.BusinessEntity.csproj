@@ -50,6 +50,9 @@
     <Compile Include="carrera.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="carrera_inicio_categoria.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="categoria.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

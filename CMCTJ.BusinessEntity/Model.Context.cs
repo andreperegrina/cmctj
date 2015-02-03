@@ -31,5 +31,6 @@ namespace CMCTJ.BusinessEntity
         public DbSet<corredor> corredor { get; set; }
         public DbSet<has_carrera> has_carrera { get; set; }
         public DbSet<tiempo> tiempo { get; set; }
+        public DbSet<carrera_inicio_categoria> carrera_inicio_categoria { get; set; }
     }
 }

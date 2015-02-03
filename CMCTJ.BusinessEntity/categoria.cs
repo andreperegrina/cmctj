@@ -18,6 +18,7 @@ namespace CMCTJ.BusinessEntity
         {
             this.corredor = new HashSet<corredor>();
             this.tiempo = new HashSet<tiempo>();
+            this.carrera_inicio_categoria = new HashSet<carrera_inicio_categoria>();
         }
     
         public int categoria_id { get; set; }
@@ -27,5 +28,6 @@ namespace CMCTJ.BusinessEntity
     
         public virtual ICollection<corredor> corredor { get; set; }
         public virtual ICollection<tiempo> tiempo { get; set; }
+        public virtual ICollection<carrera_inicio_categoria> carrera_inicio_categoria { get; set; }
     }
 }
