@@ -19,6 +19,8 @@ namespace CMCTJ.BusinessEntity
         public int carrera_id { get; set; }
         public System.DateTime tiempo_corredor { get; set; }
         public int categoria_id { get; set; }
+        public int vuelta { get; set; }
+        public System.TimeSpan tiempo_diferencia { get; set; }
     
         public virtual carrera carrera { get; set; }
         public virtual categoria categoria { get; set; }

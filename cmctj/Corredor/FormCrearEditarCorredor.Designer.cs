@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtFacebook = new System.Windows.Forms.TextBox();
             this.rbFemenino = new System.Windows.Forms.RadioButton();
@@ -57,7 +58,7 @@
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sglueDxClub = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.errPrValidar = new System.Windows.Forms.ErrorProvider();
+            this.errPrValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbSexo = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -408,6 +409,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormCrearEditarCorredor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormCrearEditarCorredor";
             this.Load += new System.EventHandler(this.FormCrearEditarCorredor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties.CalendarTimeProperties)).EndInit();

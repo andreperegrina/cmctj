@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lbMensajeError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditNumero.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,13 +73,23 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lbMensajeError
+            // 
+            this.lbMensajeError.AutoSize = true;
+            this.lbMensajeError.ForeColor = System.Drawing.Color.Red;
+            this.lbMensajeError.Location = new System.Drawing.Point(12, 78);
+            this.lbMensajeError.Name = "lbMensajeError";
+            this.lbMensajeError.Size = new System.Drawing.Size(0, 13);
+            this.lbMensajeError.TabIndex = 4;
+            // 
             // FormNuevoTiempo
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(389, 153);
+            this.ClientSize = new System.Drawing.Size(394, 153);
+            this.Controls.Add(this.lbMensajeError);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
@@ -99,5 +110,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label lbMensajeError;
     }
 }

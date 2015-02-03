@@ -32,15 +32,34 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiDxIniciarCarrera = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.gcDxCarreasIniciadas = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDxTiempo = new DevExpress.XtraGrid.GridControl();
             this.gvCorredores = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bbiDxIniciarCarrera = new DevExpress.XtraBars.BarButtonItem();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDxCarreasIniciadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDxTiempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCorredores)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +71,10 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.bbiDxIniciarCarrera});
+            this.bbiDxIniciarCarrera,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -82,6 +102,26 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
+            // bbiDxIniciarCarrera
+            // 
+            this.bbiDxIniciarCarrera.Caption = "F3 - Iniciar carrera";
+            this.bbiDxIniciarCarrera.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiDxIniciarCarrera.Glyph")));
+            this.bbiDxIniciarCarrera.Id = 3;
+            this.bbiDxIniciarCarrera.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F3);
+            this.bbiDxIniciarCarrera.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiDxIniciarCarrera.LargeGlyph")));
+            this.bbiDxIniciarCarrera.Name = "bbiDxIniciarCarrera";
+            this.bbiDxIniciarCarrera.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "F5 - Actualizar Datos";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 4;
+            this.barButtonItem3.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F5);
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick_1);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -95,6 +135,7 @@
             this.ribbonPageGroup1.Glyph = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup1.Glyph")));
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDxIniciarCarrera);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tiempo";
             // 
@@ -106,12 +147,79 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gcDxTiempo);
+            this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 142);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(919, 327);
             this.panel1.TabIndex = 1;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.gcDxCarreasIniciadas);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.gcDxTiempo);
+            this.splitContainer1.Size = new System.Drawing.Size(919, 327);
+            this.splitContainer1.SplitterDistance = 207;
+            this.splitContainer1.TabIndex = 1;
+            // 
+            // gcDxCarreasIniciadas
+            // 
+            this.gcDxCarreasIniciadas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gcDxCarreasIniciadas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcDxCarreasIniciadas.Location = new System.Drawing.Point(0, 0);
+            this.gcDxCarreasIniciadas.MainView = this.gridView1;
+            this.gcDxCarreasIniciadas.MenuManager = this.ribbonControl1;
+            this.gcDxCarreasIniciadas.Name = "gcDxCarreasIniciadas";
+            this.gcDxCarreasIniciadas.Size = new System.Drawing.Size(207, 327);
+            this.gcDxCarreasIniciadas.TabIndex = 1;
+            this.gcDxCarreasIniciadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gridView1.GridControl = this.gcDxCarreasIniciadas;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
+            this.gridView1.OptionsFind.AllowFindPanel = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Carrera Inicio Categoria Id";
+            this.gridColumn1.FieldName = "CarreraInicioCategoriaId";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Categoria";
+            this.gridColumn2.FieldName = "Categoria";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Inicio";
+            this.gridColumn3.DisplayFormat.FormatString = "T";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn3.FieldName = "TiempoInicioCarrera";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // gcDxTiempo
             // 
@@ -121,27 +229,74 @@
             this.gcDxTiempo.MainView = this.gvCorredores;
             this.gcDxTiempo.MenuManager = this.ribbonControl1;
             this.gcDxTiempo.Name = "gcDxTiempo";
-            this.gcDxTiempo.Size = new System.Drawing.Size(919, 327);
+            this.gcDxTiempo.Size = new System.Drawing.Size(708, 327);
             this.gcDxTiempo.TabIndex = 0;
             this.gcDxTiempo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCorredores});
             // 
             // gvCorredores
             // 
+            this.gvCorredores.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9});
             this.gvCorredores.GridControl = this.gcDxTiempo;
             this.gvCorredores.Name = "gvCorredores";
             this.gvCorredores.OptionsBehavior.Editable = false;
             this.gvCorredores.OptionsFind.AlwaysVisible = true;
             // 
-            // bbiDxIniciarCarrera
+            // gridColumn4
             // 
-            this.bbiDxIniciarCarrera.Caption = "F3 - Iniciar carrera";
-            this.bbiDxIniciarCarrera.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiDxIniciarCarrera.Glyph")));
-            this.bbiDxIniciarCarrera.Id = 3;
-            this.bbiDxIniciarCarrera.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F3);
-            this.bbiDxIniciarCarrera.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiDxIniciarCarrera.LargeGlyph")));
-            this.bbiDxIniciarCarrera.Name = "bbiDxIniciarCarrera";
-            this.bbiDxIniciarCarrera.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.gridColumn4.Caption = "Tiempo ID";
+            this.gridColumn4.FieldName = "TiempoId";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Nombre";
+            this.gridColumn5.FieldName = "Nombre";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Tiempo por vuelta";
+            this.gridColumn6.FieldName = "Tiempo";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Tiempo Registrado";
+            this.gridColumn7.DisplayFormat.FormatString = "T";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn7.FieldName = "TiempoRegistrado";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 3;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Vuelta";
+            this.gridColumn8.FieldName = "Vuelta";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 4;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Categoría";
+            this.gridColumn9.FieldName = "Categoria";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 5;
             // 
             // FormMain
             // 
@@ -155,6 +310,12 @@
             this.Text = "FormMain";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcDxCarreasIniciadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDxTiempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCorredores)).EndInit();
             this.ResumeLayout(false);
@@ -174,5 +335,18 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem bbiDxIniciarCarrera;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private DevExpress.XtraGrid.GridControl gcDxCarreasIniciadas;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

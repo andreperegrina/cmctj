@@ -76,6 +76,8 @@
           <Property Name="carrera_id" Type="int" Nullable="false" />
           <Property Name="tiempo_corredor" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="categoria_id" Type="int" Nullable="false" />
+          <Property Name="vuelta" Type="int" Nullable="false" />
+          <Property Name="tiempo_diferencia" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <Association Name="fk_carrera_inicio_categoria_carrera1">
           <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
@@ -312,6 +314,8 @@
           <NavigationProperty Name="carrera" Relationship="Self.fk_Tiempo_Carrera1" FromRole="tiempo" ToRole="carrera" />
           <NavigationProperty Name="categoria" Relationship="Self.fk_Tiempo_Categoria1" FromRole="tiempo" ToRole="categoria" />
           <NavigationProperty Name="corredor" Relationship="Self.fk_Tiempo_Corredor1" FromRole="tiempo" ToRole="corredor" />
+          <Property Name="vuelta" Type="Int32" Nullable="false" />
+          <Property Name="tiempo_diferencia" Type="Time" Nullable="false" />
         </EntityType>
         <Association Name="fk_has_carrera_Carrera1">
           <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
@@ -544,6 +548,8 @@
           <EntitySetMapping Name="tiempo">
             <EntityTypeMapping TypeName="cmctjModel.tiempo">
               <MappingFragment StoreEntitySet="tiempo">
+                <ScalarProperty Name="tiempo_diferencia" ColumnName="tiempo_diferencia" />
+                <ScalarProperty Name="vuelta" ColumnName="vuelta" />
                 <ScalarProperty Name="tiempo_id" ColumnName="tiempo_id" />
                 <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />
                 <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />

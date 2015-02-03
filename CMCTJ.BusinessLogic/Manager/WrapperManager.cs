@@ -41,5 +41,19 @@ namespace CMCTJ.BusinessLogic.Manager
             DataAccess<TiempoWrapper> tiempoWrapperDAO = new DataAccess<TiempoWrapper>();
             return tiempoWrapperDAO.executeQuery("SELECT * FROM corredores_vw");
         }
+
+        public List<CarreraIniciadaWrapper> GetAllCarreraIniciadaWrapper()
+        {
+            DataAccess<CarreraIniciadaWrapper> carreraIniciadaWrapperDAO = new DataAccess<CarreraIniciadaWrapper>();
+            return carreraIniciadaWrapperDAO.executeQuery("select carrera_inicio_categoria_id as CarreraInicioCategoriaId,nombre as categoria,tiempo_inicio_carrera as tiempoiniciocarrera from carrera_inicio_categoria as carincat inner join categoria as categoria on categoria.categoria_id=carincat.categoria_id");
+        }
+
+        public int GetBuscaCorredorById(int corredor_id)
+        {
+            DataAccess<CorredorWrapper> carreraIniciadaWrapperDAO = new DataAccess<CorredorWrapper>();
+            List<CorredorWrapper> carreraIniciadaWrapperDAOexecuteQuery = carreraIniciadaWrapperDAO.executeQuery(String.Format("select buscar_corredor({0}) as corredorid", corredor_id));
+            return carreraIniciadaWrapperDAOexecuteQuery.FirstOrDefault().CorredorId;
+        
+        }
     }
 }

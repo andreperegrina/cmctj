@@ -20,6 +20,7 @@ namespace cmctj
             InitializeComponent();
             CarreraManager nuevoCarreraManager = new CarreraManager();
             this.ActualizarDatos();
+            this.ActualizaDatosCategoria();
             int nuevoCarreraManagerGetCarreraActualcarrera_id = nuevoCarreraManager.GetCarreraActual().carrera_id;
             SessionData.Instance["carrera_actual_id"] = nuevoCarreraManagerGetCarreraActualcarrera_id;
         }
@@ -42,6 +43,14 @@ namespace cmctj
             gcDxTiempo.DataSource = tiempoWrapperLista;
         }
 
+        private void ActualizaDatosCategoria()
+        {
+            WrapperManager nuevoWrapperManager = new WrapperManager();
+            List<CarreraIniciadaWrapper> tiempoWrapperLista =
+                nuevoWrapperManager.GetAllCarreraIniciadaWrapper();
+            gcDxCarreasIniciadas.DataSource = tiempoWrapperLista;
+        }
+
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -58,6 +67,11 @@ namespace cmctj
             {
                 nuevoTiempo.ShowDialog();
             }
+        }
+
+        private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.ActualizarDatos();
         }
     }
 }

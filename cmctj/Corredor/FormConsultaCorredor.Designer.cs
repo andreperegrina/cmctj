@@ -219,6 +219,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormConsultaCorredor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormConsultaCorredor";
             this.Load += new System.EventHandler(this.FormConsultaCorredor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcDxCorredores)).EndInit();

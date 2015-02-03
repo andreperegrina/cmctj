@@ -12,6 +12,7 @@ namespace CMCTJ.BusinessLogic.Wrapper
         public int Vuelta { get; set; }
         public String Nombre { get; set; }
         public TimeSpan Tiempo { get; set; }
+        public DateTime TiempoRegistrado { get; set; }
         public String Categoria { get; set; }
     }
 }

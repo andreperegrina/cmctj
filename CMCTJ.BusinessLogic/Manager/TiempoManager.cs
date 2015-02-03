@@ -15,6 +15,8 @@ namespace CMCTJ.BusinessLogic.Manager
                 carrera_id = carreraID, 
                 corredor_id = corredorRegistrar.corredor_id, 
                 categoria_id = corredorRegistrar.categoria_id, 
+                vuelta=0,
+                tiempo_diferencia=DateTime.Now.TimeOfDay,
                 tiempo_corredor = DateTime.Now };
             return entityDAO.Save(nuevoTiempo);
         }

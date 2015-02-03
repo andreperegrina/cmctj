@@ -22,17 +22,32 @@ namespace cmctj
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            lbMensajeError.Text = "";
             String numeroCorredor=txtEditNumero.Text;
             int numeroResultado=-1;
-            Int32.TryParse(numeroCorredor,out numeroResultado);
-            if (numeroResultado!=-1)
+            bool esNumero=Int32.TryParse(numeroCorredor,out numeroResultado);
+            if (esNumero && numeroResultado != -1)
             {
-                int? carreraID=(int?)SessionData.Instance["carrera_actual_id"];
-                CorredorManager corredorManager=new CorredorManager();
-                corredor corredorSeleccionado=corredorManager.GetCorredorById(numeroResultado);
-                TiempoManager managerTiempo=new TiempoManager();
-                managerTiempo.RegistrarTiempo(corredorSeleccionado,carreraID.Value);
-                txtEditNumero.Text = "";
+                WrapperManager wrapperManager = new WrapperManager();
+                if (wrapperManager.GetBuscaCorredorById(numeroResultado) >= 0)
+                {
+                    int? carreraID = (int?)SessionData.Instance["carrera_actual_id"];
+                    CorredorManager corredorManager = new CorredorManager();
+                    corredor corredorSeleccionado = corredorManager.GetCorredorById(numeroResultado);
+                    TiempoManager managerTiempo = new TiempoManager();
+                    managerTiempo.RegistrarTiempo(corredorSeleccionado, carreraID.Value);
+                    txtEditNumero.Text = "";
+                }
+                else
+                {
+                    lbMensajeError.Text = "Error no se encontro corredor";
+                }
+            }
+            else
+            {
+
+                lbMensajeError.Text = "Por favor ingrese un número valido";
             }
         }
 
