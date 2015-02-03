@@ -14,6 +14,7 @@
           <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fecha_creacion" Type="date" Nullable="false" />
           <Property Name="fecha_carrera" Type="date" Nullable="false" />
+          <Property Name="tiempo_inicio_carrera" Type="datetime" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="categoria">
           <Key>
@@ -202,6 +203,7 @@
           <Property Name="fecha_carrera" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Carrera1" FromRole="carrera" ToRole="has_carrera" />
           <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Carrera1" FromRole="carrera" ToRole="tiempo" />
+          <Property Name="tiempo_inicio_carrera" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="categoria">
           <Key>
@@ -396,6 +398,7 @@
           <EntitySetMapping Name="carrera">
             <EntityTypeMapping TypeName="cmctjModel.carrera">
               <MappingFragment StoreEntitySet="carrera">
+                <ScalarProperty Name="tiempo_inicio_carrera" ColumnName="tiempo_inicio_carrera" />
                 <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />

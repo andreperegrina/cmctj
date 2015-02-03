@@ -25,6 +25,7 @@ namespace CMCTJ.BusinessEntity
         public string descripcion { get; set; }
         public System.DateTime fecha_creacion { get; set; }
         public System.DateTime fecha_carrera { get; set; }
+        public System.DateTime tiempo_inicio_carrera { get; set; }
     
         public virtual ICollection<has_carrera> has_carrera { get; set; }
         public virtual ICollection<tiempo> tiempo { get; set; }
