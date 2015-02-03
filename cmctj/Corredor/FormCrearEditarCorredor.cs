@@ -1,4 +1,5 @@
-﻿using CMCTJ.BusinessEntity;
+﻿using cmctj.Utils;
+using CMCTJ.BusinessEntity;
 using CMCTJ.BusinessLogic.Manager;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,43 @@ namespace cmctj.Corredor
             WrapperManager nuevoWrapperManager=new WrapperManager();
             sglueDxCategoria.Properties.DataSource = nuevoWrapperManager.GetAllCategoriaWrapper();
             sglueDxClub.Properties.DataSource = nuevoWrapperManager.GetAllClubWrapper();
+            //Obtener objeto con el manager de corredor y llenar los campos del formulario
+            //SessionData.Instance["corredo_id_editar];
+           
+            if (SessionData.Instance["corredor_id_editar"] != null)
+            {
+                LlenarFormulario();
+            }
+        }
+
+        public void LlenarFormulario()
+        {
+            CorredorManager nuevoCorredor = new CorredorManager();
+            corredor nuevo = new corredor();
+            nuevo = nuevoCorredor.GetCorredorById((int)SessionData.Instance["corredor_id_editar"]);
+            txtId.Text = nuevo.corredor_id.ToString();
+            txtNombre.Text = nuevo.nombre;
+            txtPaterno.Text = nuevo.apellido_paterno;
+            txtMaterno.Text = nuevo.apellido_materno;
+            dtFecha.DateTime = nuevo.fecha;
+            dtFechaNacimiento.DateTime = nuevo.fecha_nacimiento;
+            txtCorreo.Text = nuevo.correo;
+            txtFacebook.Text = nuevo.facebook;
+            txtTelefono.Text = nuevo.telefono;
+            int sex = nuevo.sexo;
+            if (sex == 0)
+            {
+                rbMasculino.Checked = true;
+                rbFemenino.Checked = false;
+
+            }
+            else
+            {
+                rbMasculino.Checked = false;
+                rbFemenino.Checked = true;
+            }
+            sglueDxClub.EditValue = nuevo.club_id;
+            sglueDxCategoria.EditValue = nuevo.categoria_id;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -78,44 +116,64 @@ namespace cmctj.Corredor
                 this.DialogResult = DialogResult.None;
                 return;
             }
+            
             //Obtener valor para el sexo
             int sex;
             if (rbMasculino.Checked == true)
                 sex = 0;
             else
                 sex = 1;
+
             CorredorManager nuevoCorredor = new CorredorManager();
-            corredor nuevo = new corredor() { 
-                club_id = (int)clubID, 
-                categoria_id = (int)cateogriaID,
-                fecha = dtFechaNacimiento.DateTime,
-                apellido_paterno = txtPaterno.Text,
-                apellido_materno = txtMaterno.Text,
-                nombre = txtNombre.Text,
-                fecha_nacimiento = dtFechaNacimiento.DateTime,
-                correo = txtCorreo.Text,
-                telefono = txtTelefono.Text,
-                facebook = txtFacebook.Text,
-                sexo = sex
+            corredor nuevo = new corredor();
+            if (SessionData.Instance["corredor_id_editar"] != null)
+            {
+                nuevo = nuevoCorredor.GetCorredorById((int)SessionData.Instance["corredor_id_editar"]);
                 
-            };
-            nuevoCorredor.Save(nuevo);
+            }
+            nuevo.club_id = (int)clubID;
+            nuevo.categoria_id = (int)cateogriaID;
+            nuevo.fecha = dtFechaNacimiento.DateTime;
+            nuevo.apellido_paterno = txtPaterno.Text;
+            nuevo.apellido_materno = txtMaterno.Text;
+            nuevo.nombre = txtNombre.Text;
+            nuevo.fecha_nacimiento = dtFechaNacimiento.DateTime;
+            nuevo.correo = txtCorreo.Text;
+            nuevo.telefono = txtTelefono.Text;
+            nuevo.facebook = txtFacebook.Text;
+            nuevo.sexo = sex;
+
+
+            if (SessionData.Instance["corredor_id_editar"] == null)
+            {
+
+                nuevoCorredor.Save(nuevo);
+            }
+            else
+            {
+                nuevoCorredor.Update(nuevo);
+            }
             MessageBox.Show("Corredor ingresado exitosamente");
+            this.Close();
 
-
-            
-            
-
-            
-            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCrearEditarCorredor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }

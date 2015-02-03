@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtFacebook = new System.Windows.Forms.TextBox();
             this.rbFemenino = new System.Windows.Forms.RadioButton();
@@ -57,8 +58,10 @@
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sglueDxClub = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.errPrValidar = new System.Windows.Forms.ErrorProvider();
+            this.errPrValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbSexo = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).BeginInit();
@@ -351,6 +354,24 @@
             this.gbSexo.TabIndex = 57;
             this.gbSexo.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(502, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 13);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Id: ";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(520, 54);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(75, 20);
+            this.txtId.TabIndex = 59;
+            // 
             // FormCrearEditarCorredor
             // 
             this.AcceptButton = this.btnAceptar;
@@ -358,6 +379,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(648, 291);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.gbSexo);
             this.Controls.Add(this.sglueDxClub);
             this.Controls.Add(this.sglueDxCategoria);
@@ -386,6 +409,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormCrearEditarCorredor";
             this.Text = "FormCrearEditarCorredor";
+            this.Load += new System.EventHandler(this.FormCrearEditarCorredor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaNacimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).EndInit();
@@ -435,5 +459,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
         private System.Windows.Forms.ErrorProvider errPrValidar;
         private System.Windows.Forms.GroupBox gbSexo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
