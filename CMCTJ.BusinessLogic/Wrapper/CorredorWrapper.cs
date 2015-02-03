@@ -12,5 +12,7 @@ namespace CMCTJ.BusinessLogic.Wrapper
         public String Nombre { get; set; }
         public String Correo { get; set; }
         public String Telefono { get; set; }
+        public String Club { get; set; }
+        public String Categoria { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace CMCTJ.BusinessLogic.Manager
         public List<CorredorWrapper> GetAllCorredorWrapper()
         {
             DataAccess<CorredorWrapper> corredorWrapperDAO = new DataAccess<CorredorWrapper>();
-            return corredorWrapperDAO.executeQuery("select corredor_id as corredorid,concat(nombre,' ', apellido_paterno,' ',apellido_materno) as nombre,correo,telefono From corredor");
+            return corredorWrapperDAO.executeQuery("select corredor_id as corredorid,concat(corredor.nombre,' ', apellido_paterno,' ',apellido_materno) as nombre,correo,telefono ,club.nombre as club,categoria.nombre as categoria From corredor as corredor inner join categoria as categoria on categoria.categoria_id=corredor.categoria_id inner join club as club on club.club_id=corredor.club_id");
         }
         public List<TiempoWrapper> GetAllTiempoWrapper()
         {
