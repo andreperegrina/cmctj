@@ -1,5 +1,6 @@
 ﻿using cmctj.Utils;
 using CMCTJ.BusinessLogic.Manager;
+using CMCTJ.BusinessLogic.Wrapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,22 +18,36 @@ namespace cmctj
         public FormMain()
         {
             InitializeComponent();
-            CarreraManager nuevoCarreraManager=new CarreraManager();
-            int nuevoCarreraManagerGetCarreraActualcarrera_id = nuevoCarreraManager.GetCarreraActual().carrera_id;;
+            CarreraManager nuevoCarreraManager = new CarreraManager();
+            this.ActualizarDatos();
+            int nuevoCarreraManagerGetCarreraActualcarrera_id = nuevoCarreraManager.GetCarreraActual().carrera_id;
             SessionData.Instance["carrera_actual_id"] = nuevoCarreraManagerGetCarreraActualcarrera_id;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FormNuevoTiempo nuevoTiempo = new FormNuevoTiempo();
-            nuevoTiempo.Show();
+            using (FormNuevoTiempo nuevoTiempo = new FormNuevoTiempo())
+            {
+                nuevoTiempo.ShowDialog();
+            }
+            ActualizarDatos();
+        }
+
+        private void ActualizarDatos()
+        {
+            WrapperManager nuevoWrapperManager = new WrapperManager();
+            List<TiempoWrapper> tiempoWrapperLista =
+                nuevoWrapperManager.GetAllTiempoWrapper();
+            gcDxTiempo.DataSource = tiempoWrapperLista;
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            Corredor.FormCrearEditarCorredor nuevoTiempo = new Corredor.FormCrearEditarCorredor();
-            nuevoTiempo.Show();
+            using (Corredor.FormCrearEditarCorredor nuevoTiempo = new Corredor.FormCrearEditarCorredor())
+            {
+                nuevoTiempo.ShowDialog();
+            }
         }
     }
 }

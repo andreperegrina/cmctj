@@ -85,6 +85,7 @@
             this.Controls.Add(this.txtEditNumero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormNuevoTiempo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormNuevoTiempo";
             ((System.ComponentModel.ISupportInitialize)(this.txtEditNumero.Properties)).EndInit();
             this.ResumeLayout(false);

@@ -27,11 +27,12 @@ namespace cmctj
             Int32.TryParse(numeroCorredor,out numeroResultado);
             if (numeroResultado!=-1)
             {
-                int? carreraID=(int?)SessionData.Instance["carrera_id_en_progreso"];
+                int? carreraID=(int?)SessionData.Instance["carrera_actual_id"];
                 CorredorManager corredorManager=new CorredorManager();
                 corredor corredorSeleccionado=corredorManager.GetCorredorById(numeroResultado);
                 TiempoManager managerTiempo=new TiempoManager();
                 managerTiempo.RegistrarTiempo(corredorSeleccionado,carreraID.Value);
+                txtEditNumero.Text = "";
             }
         }
 

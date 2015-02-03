@@ -36,12 +36,12 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDxTiempo = new DevExpress.XtraGrid.GridControl();
+            this.gvCorredores = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDxTiempo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCorredores)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -103,30 +103,32 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gridControl1);
+            this.panel1.Controls.Add(this.gcDxTiempo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 142);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(919, 327);
             this.panel1.TabIndex = 1;
             // 
-            // gridControl1
+            // gcDxTiempo
             // 
-            this.gridControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbonControl1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(919, 327);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcDxTiempo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gcDxTiempo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcDxTiempo.Location = new System.Drawing.Point(0, 0);
+            this.gcDxTiempo.MainView = this.gvCorredores;
+            this.gcDxTiempo.MenuManager = this.ribbonControl1;
+            this.gcDxTiempo.Name = "gcDxTiempo";
+            this.gcDxTiempo.Size = new System.Drawing.Size(919, 327);
+            this.gcDxTiempo.TabIndex = 0;
+            this.gcDxTiempo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvCorredores});
             // 
-            // gridView1
+            // gvCorredores
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.gvCorredores.GridControl = this.gcDxTiempo;
+            this.gvCorredores.Name = "gvCorredores";
+            this.gvCorredores.OptionsBehavior.Editable = false;
+            this.gvCorredores.OptionsFind.AlwaysVisible = true;
             // 
             // FormMain
             // 
@@ -140,8 +142,8 @@
             this.Text = "FormMain";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDxTiempo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCorredores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,8 +156,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcDxTiempo;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvCorredores;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
