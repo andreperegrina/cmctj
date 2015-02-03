@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\CarreraInicioCategoriaManager.cs" />
     <Compile Include="Manager\CarreraManager.cs" />
     <Compile Include="Manager\CategoriaManager.cs" />
     <Compile Include="Manager\ClubManager.cs" />
