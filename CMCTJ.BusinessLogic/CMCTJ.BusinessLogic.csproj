@@ -50,6 +50,7 @@
     <Compile Include="Wrapper\CategoriaWrapper.cs" />
     <Compile Include="Wrapper\ClubWrapper.cs" />
     <Compile Include="Wrapper\CorredorWrapper.cs" />
+    <Compile Include="Wrapper\TiempoWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CMCTJ.BusinessEntity\CMCTJ.BusinessEntity.csproj">
