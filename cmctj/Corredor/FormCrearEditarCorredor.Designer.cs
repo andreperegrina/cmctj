@@ -357,7 +357,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(502, 57);
+            this.label10.Location = new System.Drawing.Point(524, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(22, 13);
             this.label10.TabIndex = 58;
@@ -367,9 +367,9 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(520, 54);
+            this.txtId.Location = new System.Drawing.Point(552, 54);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(75, 20);
+            this.txtId.Size = new System.Drawing.Size(43, 20);
             this.txtId.TabIndex = 59;
             // 
             // FormCrearEditarCorredor
