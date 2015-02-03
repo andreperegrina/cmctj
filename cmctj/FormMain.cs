@@ -45,7 +45,7 @@ namespace cmctj
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            using (Corredor.FormCrearEditarCorredor nuevoTiempo = new Corredor.FormCrearEditarCorredor())
+            using (Corredor.FormConsultaCorredor nuevoTiempo = new Corredor.FormConsultaCorredor())
             {
                 nuevoTiempo.ShowDialog();
             }
@@ -54,6 +54,10 @@ namespace cmctj
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+            using (Carrera.FormIniciarCarrera nuevoTiempo = new Carrera.FormIniciarCarrera())
+            {
+                nuevoTiempo.ShowDialog();
+            }
         }
     }
 }
