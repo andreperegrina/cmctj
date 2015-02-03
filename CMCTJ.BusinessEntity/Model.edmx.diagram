@@ -18,6 +18,9 @@
         <AssociationConnector Association="cmctjModel.fk_Corredor_Club" ManuallyRouted="false" />
         <AssociationConnector Association="cmctjModel.fk_has_carrera_Corredor1" ManuallyRouted="false" />
         <AssociationConnector Association="cmctjModel.fk_Tiempo_Corredor1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="cmctjModel.carrera_inicio_categoria" Width="1.5" PointX="5.25" PointY="7.375" />
+        <AssociationConnector Association="cmctjModel.fk_carrera_inicio_categoria_carrera1" />
+        <AssociationConnector Association="cmctjModel.fk_carrera_inicio_categoria_categoria1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

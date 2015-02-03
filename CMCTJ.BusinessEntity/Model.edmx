@@ -16,6 +16,15 @@
           <Property Name="fecha_carrera" Type="date" Nullable="false" />
           <Property Name="tiempo_inicio_carrera" Type="datetime" Precision="0" Nullable="false" />
         </EntityType>
+        <EntityType Name="carrera_inicio_categoria">
+          <Key>
+            <PropertyRef Name="carrera_inicio_categoria_id" />
+          </Key>
+          <Property Name="carrera_inicio_categoria_id" Type="int" Nullable="false" />
+          <Property Name="tiempo_inicio_carrera" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="carrera_id" Type="int" Nullable="false" />
+          <Property Name="categoria_id" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="categoria">
           <Key>
             <PropertyRef Name="categoria_id" />
@@ -68,6 +77,30 @@
           <Property Name="tiempo_corredor" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="categoria_id" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="fk_carrera_inicio_categoria_carrera1">
+          <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
+          <End Role="carrera_inicio_categoria" Type="Self.carrera_inicio_categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="carrera_inicio_categoria">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_carrera_inicio_categoria_categoria1">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="carrera_inicio_categoria" Type="Self.carrera_inicio_categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="categoria_id" />
+            </Principal>
+            <Dependent Role="carrera_inicio_categoria">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_Corredor_Categoria1">
           <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
           <End Role="corredor" Type="Self.corredor" Multiplicity="*" />
@@ -154,11 +187,20 @@
         </Association>
         <EntityContainer Name="cmctjModelStoreContainer">
           <EntitySet Name="carrera" EntityType="Self.carrera" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="carrera_inicio_categoria" EntityType="Self.carrera_inicio_categoria" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="categoria" EntityType="Self.categoria" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="club" EntityType="Self.club" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="corredor" EntityType="Self.corredor" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="has_carrera" EntityType="Self.has_carrera" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="tiempo" EntityType="Self.tiempo" Schema="cmctj" store:Type="Tables" />
+          <AssociationSet Name="fk_carrera_inicio_categoria_carrera1" Association="Self.fk_carrera_inicio_categoria_carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="carrera_inicio_categoria" EntitySet="carrera_inicio_categoria" />
+          </AssociationSet>
+          <AssociationSet Name="fk_carrera_inicio_categoria_categoria1" Association="Self.fk_carrera_inicio_categoria_categoria1">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="carrera_inicio_categoria" EntitySet="carrera_inicio_categoria" />
+          </AssociationSet>
           <AssociationSet Name="fk_Corredor_Categoria1" Association="Self.fk_Corredor_Categoria1">
             <End Role="categoria" EntitySet="categoria" />
             <End Role="corredor" EntitySet="corredor" />
@@ -204,6 +246,7 @@
           <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Carrera1" FromRole="carrera" ToRole="has_carrera" />
           <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Carrera1" FromRole="carrera" ToRole="tiempo" />
           <Property Name="tiempo_inicio_carrera" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="carrera_inicio_categoria" Relationship="cmctjModel.fk_carrera_inicio_categoria_carrera1" FromRole="carrera" ToRole="carrera_inicio_categoria" />
         </EntityType>
         <EntityType Name="categoria">
           <Key>
@@ -215,6 +258,7 @@
           <NavigationProperty Name="corredor" Relationship="Self.fk_Corredor_Categoria1" FromRole="categoria" ToRole="corredor" />
           <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Categoria1" FromRole="categoria" ToRole="tiempo" />
           <Property Name="alias" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="carrera_inicio_categoria" Relationship="cmctjModel.fk_carrera_inicio_categoria_categoria1" FromRole="categoria" ToRole="carrera_inicio_categoria" />
         </EntityType>
         <EntityType Name="club">
           <Key>
@@ -388,7 +432,51 @@
             <End Role="corredor" EntitySet="corredor" />
             <End Role="tiempo" EntitySet="tiempo" />
           </AssociationSet>
+          <EntitySet Name="carrera_inicio_categoria" EntityType="cmctjModel.carrera_inicio_categoria" />
+          <AssociationSet Name="fk_carrera_inicio_categoria_carrera1" Association="cmctjModel.fk_carrera_inicio_categoria_carrera1">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="carrera_inicio_categoria" EntitySet="carrera_inicio_categoria" />
+          </AssociationSet>
+          <AssociationSet Name="fk_carrera_inicio_categoria_categoria1" Association="cmctjModel.fk_carrera_inicio_categoria_categoria1">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="carrera_inicio_categoria" EntitySet="carrera_inicio_categoria" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="carrera_inicio_categoria">
+          <Key>
+            <PropertyRef Name="carrera_inicio_categoria_id" />
+          </Key>
+          <Property Name="carrera_inicio_categoria_id" Type="Int32" Nullable="false" />
+          <Property Name="tiempo_inicio_carrera" Type="DateTime" Nullable="false" />
+          <Property Name="carrera_id" Type="Int32" Nullable="false" />
+          <Property Name="categoria_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="carrera" Relationship="cmctjModel.fk_carrera_inicio_categoria_carrera1" FromRole="carrera_inicio_categoria" ToRole="carrera" />
+          <NavigationProperty Name="categoria" Relationship="cmctjModel.fk_carrera_inicio_categoria_categoria1" FromRole="carrera_inicio_categoria" ToRole="categoria" />
+        </EntityType>
+        <Association Name="fk_carrera_inicio_categoria_carrera1">
+          <End Type="cmctjModel.carrera" Role="carrera" Multiplicity="1" />
+          <End Type="cmctjModel.carrera_inicio_categoria" Role="carrera_inicio_categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="carrera_id" />
+            </Principal>
+            <Dependent Role="carrera_inicio_categoria">
+              <PropertyRef Name="carrera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_carrera_inicio_categoria_categoria1">
+          <End Type="cmctjModel.categoria" Role="categoria" Multiplicity="1" />
+          <End Type="cmctjModel.carrera_inicio_categoria" Role="carrera_inicio_categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="categoria_id" />
+            </Principal>
+            <Dependent Role="carrera_inicio_categoria">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -461,6 +549,16 @@
                 <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
                 <ScalarProperty Name="tiempo_corredor" ColumnName="tiempo_corredor" />
                 <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="carrera_inicio_categoria">
+            <EntityTypeMapping TypeName="cmctjModel.carrera_inicio_categoria">
+              <MappingFragment StoreEntitySet="carrera_inicio_categoria">
+                <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+                <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
+                <ScalarProperty Name="tiempo_inicio_carrera" ColumnName="tiempo_inicio_carrera" />
+                <ScalarProperty Name="carrera_inicio_categoria_id" ColumnName="carrera_inicio_categoria_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
