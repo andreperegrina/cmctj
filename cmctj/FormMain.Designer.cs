@@ -38,6 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gcDxTiempo = new DevExpress.XtraGrid.GridControl();
             this.gvCorredores = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bbiDxIniciarCarrera = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDxTiempo)).BeginInit();
@@ -50,9 +51,10 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.barButtonItem1,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.bbiDxIniciarCarrera});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -92,6 +94,7 @@
             // 
             this.ribbonPageGroup1.Glyph = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup1.Glyph")));
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiDxIniciarCarrera);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tiempo";
             // 
@@ -130,6 +133,16 @@
             this.gvCorredores.OptionsBehavior.Editable = false;
             this.gvCorredores.OptionsFind.AlwaysVisible = true;
             // 
+            // bbiDxIniciarCarrera
+            // 
+            this.bbiDxIniciarCarrera.Caption = "F3 - Iniciar carrera";
+            this.bbiDxIniciarCarrera.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiDxIniciarCarrera.Glyph")));
+            this.bbiDxIniciarCarrera.Id = 3;
+            this.bbiDxIniciarCarrera.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F3);
+            this.bbiDxIniciarCarrera.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiDxIniciarCarrera.LargeGlyph")));
+            this.bbiDxIniciarCarrera.Name = "bbiDxIniciarCarrera";
+            this.bbiDxIniciarCarrera.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,5 +173,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvCorredores;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem bbiDxIniciarCarrera;
     }
 }

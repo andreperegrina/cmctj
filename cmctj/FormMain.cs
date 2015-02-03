@@ -30,6 +30,7 @@ namespace cmctj
             {
                 nuevoTiempo.ShowDialog();
             }
+
             ActualizarDatos();
         }
 
@@ -48,6 +49,11 @@ namespace cmctj
             {
                 nuevoTiempo.ShowDialog();
             }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
