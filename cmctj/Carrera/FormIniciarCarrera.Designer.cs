@@ -78,7 +78,7 @@
             this.sglueDxCategoria.Properties.ValueMember = "CategoriaId";
             this.sglueDxCategoria.Properties.View = this.searchLookUpEdit1View;
             this.sglueDxCategoria.Size = new System.Drawing.Size(365, 20);
-            this.sglueDxCategoria.TabIndex = 8;
+            this.sglueDxCategoria.TabIndex = 1;
             // 
             // searchLookUpEdit1View
             // 
