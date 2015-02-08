@@ -45,6 +45,8 @@ namespace cmctj
             gcDxTiempo.DataSource = tiempoWrapperLista;
         }
 
+
+        
         private void ActualizaDatosCategoria()
         {
             WrapperManager nuevoWrapperManager = new WrapperManager();
@@ -74,6 +76,7 @@ namespace cmctj
         private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.ActualizarDatos();
+            this.ActualizaDatosCategoria();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -114,6 +117,11 @@ namespace cmctj
                     break;
                 }
             }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
