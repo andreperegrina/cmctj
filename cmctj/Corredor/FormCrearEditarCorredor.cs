@@ -38,7 +38,7 @@ namespace cmctj.Corredor
             CorredorManager nuevoCorredor = new CorredorManager();
             corredor nuevo = new corredor();
             nuevo = nuevoCorredor.GetCorredorById((int)SessionData.Instance["corredor_id_editar"]);
-            txtId.Text = nuevo.corredor_id.ToString();
+            txtId.Text = nuevo.numero.ToString();
             txtNombre.Text = nuevo.nombre;
             txtPaterno.Text = nuevo.apellido_paterno;
             txtMaterno.Text = nuevo.apellido_materno;
@@ -52,7 +52,6 @@ namespace cmctj.Corredor
             {
                 rbMasculino.Checked = true;
                 rbFemenino.Checked = false;
-
             }
             else
             {
@@ -74,7 +73,7 @@ namespace cmctj.Corredor
                 this.DialogResult = DialogResult.None;
                 return;
             }
-            
+            //
             //Validar apellido paterno
             if (String.IsNullOrEmpty(txtPaterno.Text))
             {
@@ -91,22 +90,23 @@ namespace cmctj.Corredor
                 this.DialogResult = DialogResult.None;
                 return;
             }
-            //Validar fecha de nacimiento
-            if (dtFechaNacimiento.DateTime == new DateTime())
-            {
-                errPrValidar.SetError(dtFechaNacimiento, "Elemento requerido");
-                this.DialogResult = DialogResult.None;
-                return;
-            }
+            ////Validar fecha de nacimiento
+            //if (dtFechaNacimiento.DateTime == new DateTime())
+            //{
+            //    errPrValidar.SetError(dtFechaNacimiento, "Elemento requerido");
+            //    this.DialogResult = DialogResult.None;
+            //    return;
+            //}
             //Validar club
 
             int? clubID = (int?)sglueDxClub.EditValue;
-            if (clubID == null)
-            {
-                errPrValidar.SetError(sglueDxClub, "Elemento requerido");
-                this.DialogResult = DialogResult.None;
-                return;
-            }
+            //if (clubID == null)
+            //{
+            //    errPrValidar.SetError(sglueDxClub, "Elemento requerido");
+            //    this.DialogResult = DialogResult.None;
+            //    return;
+            //}
+            clubID = 4;
             //Validar categoria
 
             int? cateogriaID = (int?)sglueDxCategoria.EditValue;
@@ -116,6 +116,8 @@ namespace cmctj.Corredor
                 this.DialogResult = DialogResult.None;
                 return;
             }
+
+
             
             //Obtener valor para el sexo
             int sex;
@@ -142,6 +144,13 @@ namespace cmctj.Corredor
             nuevo.telefono = txtTelefono.Text;
             nuevo.facebook = txtFacebook.Text;
             nuevo.sexo = sex;
+            int numero;
+            bool esNumero=Int32.TryParse(txtId.Text, out numero);
+            if (!esNumero)
+            {
+                
+            }else
+            nuevo.numero = numero;
 
 
             if (SessionData.Instance["corredor_id_editar"] == null)

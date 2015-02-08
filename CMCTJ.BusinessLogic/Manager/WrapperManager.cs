@@ -34,7 +34,7 @@ namespace CMCTJ.BusinessLogic.Manager
         public List<CorredorWrapper> GetAllCorredorWrapper()
         {
             DataAccess<CorredorWrapper> corredorWrapperDAO = new DataAccess<CorredorWrapper>();
-            return corredorWrapperDAO.executeQuery("select corredor_id as corredorid,concat(corredor.nombre,' ', apellido_paterno,' ',apellido_materno) as nombre,correo,telefono ,club.nombre as club,categoria.nombre as categoria From corredor as corredor inner join categoria as categoria on categoria.categoria_id=corredor.categoria_id inner join club as club on club.club_id=corredor.club_id");
+            return corredorWrapperDAO.executeQuery("select corredor_id as corredorid,numero as numero,concat(corredor.nombre,' ', apellido_paterno,' ',apellido_materno) as nombre,correo,telefono ,club.nombre as club,categoria.nombre as categoria From corredor as corredor inner join categoria as categoria on categoria.categoria_id=corredor.categoria_id inner join club as club on club.club_id=corredor.club_id");
         }
         public List<TiempoWrapper> GetAllTiempoWrapper()
         {
@@ -45,7 +45,7 @@ namespace CMCTJ.BusinessLogic.Manager
         public List<CarreraIniciadaWrapper> GetAllCarreraIniciadaWrapper()
         {
             DataAccess<CarreraIniciadaWrapper> carreraIniciadaWrapperDAO = new DataAccess<CarreraIniciadaWrapper>();
-            return carreraIniciadaWrapperDAO.executeQuery("select carrera_inicio_categoria_id as CarreraInicioCategoriaId,nombre as categoria,tiempo_inicio_carrera as tiempoiniciocarrera from carrera_inicio_categoria as carincat inner join categoria as categoria on categoria.categoria_id=carincat.categoria_id");
+            return carreraIniciadaWrapperDAO.executeQuery("select carrera_inicio_categoria_id as CarreraInicioCategoriaId,alias as categoria,tiempo_inicio_carrera as tiempoiniciocarrera from carrera_inicio_categoria as carincat inner join categoria as categoria on categoria.categoria_id=carincat.categoria_id");
         }
 
         public int GetBuscaCorredorById(int corredor_id)

@@ -58,6 +58,7 @@
           <Property Name="facebook" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="sexo" Type="int" Nullable="false" />
           <Property Name="categoria_id" Type="int" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="has_carrera">
           <Key>
@@ -291,6 +292,7 @@
           <NavigationProperty Name="club" Relationship="Self.fk_Corredor_Club" FromRole="corredor" ToRole="club" />
           <NavigationProperty Name="has_carrera" Relationship="Self.fk_has_carrera_Corredor1" FromRole="corredor" ToRole="has_carrera" />
           <NavigationProperty Name="tiempo" Relationship="Self.fk_Tiempo_Corredor1" FromRole="corredor" ToRole="tiempo" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="has_carrera">
           <Key>
@@ -521,6 +523,7 @@
           <EntitySetMapping Name="corredor">
             <EntityTypeMapping TypeName="cmctjModel.corredor">
               <MappingFragment StoreEntitySet="corredor">
+                <ScalarProperty Name="numero" ColumnName="numero" />
                 <ScalarProperty Name="corredor_id" ColumnName="corredor_id" />
                 <ScalarProperty Name="club_id" ColumnName="club_id" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />

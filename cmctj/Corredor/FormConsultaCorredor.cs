@@ -68,10 +68,8 @@ namespace cmctj.Corredor
                 //Este te sirve
                 if (item.GetType() == typeof(GridView))
                 {
-                    //Todo esto te sirve
                     GridView grdview = (GridView)item as GridView;
                     int[] selectedRows = grdview.GetSelectedRows();
-                    //todo esto te sirve
                     if (selectedRows.Length > 0)
                     {
                         CorredorWrapper corredorSeleccionado = (CorredorWrapper)grdview.GetRow(selectedRows[0]);

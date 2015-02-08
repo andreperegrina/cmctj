@@ -10,6 +10,7 @@ namespace CMCTJ.BusinessLogic.Wrapper
     {
         public int CarreraInicioCategoriaId { get; set; }
         public String Categoria { get; set; }
+        public String Alias { get; set; }
         public DateTime TiempoInicioCarrera { get; set; }
 
     }

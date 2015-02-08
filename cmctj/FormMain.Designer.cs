@@ -196,15 +196,20 @@
             this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsFind.AllowFindPanel = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowHeight = 30;
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.Caption = "Carrera Inicio Categoria Id";
             this.gridColumn1.FieldName = "CarreraInicioCategoriaId";
             this.gridColumn1.Name = "gridColumn1";
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.Caption = "Categoria";
             this.gridColumn2.FieldName = "Categoria";
             this.gridColumn2.Name = "gridColumn2";
@@ -213,6 +218,8 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
             this.gridColumn3.Caption = "Inicio";
             this.gridColumn3.DisplayFormat.FormatString = "T";
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -247,18 +254,21 @@
             this.gvCorredores.Name = "gvCorredores";
             this.gvCorredores.OptionsBehavior.Editable = false;
             this.gvCorredores.OptionsFind.AlwaysVisible = true;
+            this.gvCorredores.RowHeight = 30;
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
             this.gridColumn4.Caption = "Tiempo ID";
             this.gridColumn4.FieldName = "TiempoId";
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "Nombre";
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.Caption = "Número";
             this.gridColumn5.FieldName = "Nombre";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
@@ -266,6 +276,8 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
             this.gridColumn6.Caption = "Tiempo por vuelta";
             this.gridColumn6.FieldName = "Tiempo";
             this.gridColumn6.Name = "gridColumn6";
@@ -274,6 +286,8 @@
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.gridColumn7.AppearanceCell.Options.UseFont = true;
             this.gridColumn7.Caption = "Tiempo Registrado";
             this.gridColumn7.DisplayFormat.FormatString = "T";
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -284,6 +298,8 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.gridColumn8.AppearanceCell.Options.UseFont = true;
             this.gridColumn8.Caption = "Vuelta";
             this.gridColumn8.FieldName = "Vuelta";
             this.gridColumn8.Name = "gridColumn8";
@@ -292,6 +308,8 @@
             // 
             // gridColumn9
             // 
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
             this.gridColumn9.Caption = "Categoría";
             this.gridColumn9.FieldName = "Categoria";
             this.gridColumn9.Name = "gridColumn9";
@@ -308,6 +326,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);

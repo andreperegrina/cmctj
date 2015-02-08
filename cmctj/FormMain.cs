@@ -73,5 +73,10 @@ namespace cmctj
         {
             this.ActualizarDatos();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

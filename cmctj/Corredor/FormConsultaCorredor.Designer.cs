@@ -78,17 +78,22 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.RowHeight = 30;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "ID";
-            this.gridColumn3.FieldName = "CorredorId";
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.Caption = "Número";
+            this.gridColumn3.FieldName = "Numero";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.Caption = "Nombre";
             this.gridColumn1.FieldName = "Nombre";
             this.gridColumn1.Name = "gridColumn1";
@@ -97,6 +102,8 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
             this.gridColumn4.Caption = "Telefono";
             this.gridColumn4.FieldName = "Telefono";
             this.gridColumn4.Name = "gridColumn4";
@@ -105,6 +112,8 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.Caption = "E-mail";
             this.gridColumn2.FieldName = "Correo";
             this.gridColumn2.Name = "gridColumn2";
@@ -113,6 +122,8 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.Caption = "Club";
             this.gridColumn5.FieldName = "Club";
             this.gridColumn5.Name = "gridColumn5";
@@ -121,6 +132,8 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
             this.gridColumn6.Caption = "Categoria";
             this.gridColumn6.FieldName = "Categoria";
             this.gridColumn6.Name = "gridColumn6";
@@ -167,10 +180,10 @@
             // 
             // barButtonItem3
             // 
-            this.barButtonItem3.Caption = "F2 - Crear Corredor";
+            this.barButtonItem3.Caption = "F7 - Crear Corredor";
             this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
             this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F2);
+            this.barButtonItem3.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F7);
             this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);

@@ -27,6 +27,7 @@ namespace cmctj
             String numeroCorredor=txtEditNumero.Text;
             int numeroResultado=-1;
             bool esNumero=Int32.TryParse(numeroCorredor,out numeroResultado);
+            //TODO:AGREGAR CORREDOR
             if (esNumero && numeroResultado != -1)
             {
                 WrapperManager wrapperManager = new WrapperManager();
@@ -41,7 +42,7 @@ namespace cmctj
                 }
                 else
                 {
-                    lbMensajeError.Text = "Error no se encontro corredor";
+                   lbMensajeError.Text = "Error no se encontro corredor";
                 }
             }
             else
