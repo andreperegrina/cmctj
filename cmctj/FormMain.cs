@@ -71,6 +71,8 @@ namespace cmctj
             {
                 nuevoTiempo.ShowDialog();
             }
+
+            this.ActualizaDatosCategoria();
         }
 
         private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
