@@ -1,6 +1,8 @@
 ﻿using cmctj.Utils;
+using CMCTJ.BusinessEntity;
 using CMCTJ.BusinessLogic.Manager;
 using CMCTJ.BusinessLogic.Wrapper;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +79,41 @@ namespace cmctj
         private void FormMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var item in gcDxTiempo.ViewCollection)
+            {
+                if (item.GetType() == typeof(GridView))
+                {
+                    GridView grdview = (GridView)item as GridView;
+                    int[] selectedRows = grdview.GetSelectedRows();
+                    if (selectedRows.Length > 0)
+                    {
+                        DialogResult seleccion = MessageBox.Show("¿Realmente deseas eliminar este tiempo?", "Atención!!!", MessageBoxButtons.OKCancel);
+
+                        if (seleccion == DialogResult.OK)
+                        {
+
+                            TiempoManager cor = new TiempoManager();
+
+                            TiempoWrapper corredorSeleccionadoVW = (TiempoWrapper)grdview.GetRow(selectedRows[0]);
+
+                            tiempo corredorSeleccionado = cor.GetTiempoById(corredorSeleccionadoVW.TiempoId);
+
+                            cor.Remove(corredorSeleccionado);
+
+                            grdview.FocusedRowHandle = selectedRows[0];
+
+                            MessageBox.Show("Se elimino el tiempo", "Atención");
+                            ActualizarDatos();
+
+                        }
+                    }
+                    break;
+                }
+            }
         }
     }
 }

@@ -20,6 +20,11 @@ namespace CMCTJ.BusinessLogic.Manager
                 tiempo_corredor = DateTime.Now };
             return entityDAO.Save(nuevoTiempo);
         }
-        
+
+
+        public tiempo GetTiempoById(int corredorID)
+        {
+            return entityDAO.Find(e => e.tiempo_id == corredorID);
+        }
     }
 }

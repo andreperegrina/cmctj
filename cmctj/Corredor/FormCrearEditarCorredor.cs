@@ -35,6 +35,8 @@ namespace cmctj.Corredor
 
         public void LlenarFormulario()
         {
+
+            //TODO: Validar número
             CorredorManager nuevoCorredor = new CorredorManager();
             corredor nuevo = new corredor();
             nuevo = nuevoCorredor.GetCorredorById((int)SessionData.Instance["corredor_id_editar"]);
@@ -106,7 +108,11 @@ namespace cmctj.Corredor
             //    this.DialogResult = DialogResult.None;
             //    return;
             //}
+            if (clubID==null)
+            {
+                
             clubID = 4;
+            }
             //Validar categoria
 
             int? cateogriaID = (int?)sglueDxCategoria.EditValue;
