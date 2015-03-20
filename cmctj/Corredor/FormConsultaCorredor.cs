@@ -114,7 +114,7 @@ namespace cmctj.Corredor
 
                             CorredorWrapper corredorSeleccionadoVW = (CorredorWrapper)grdview.GetRow(selectedRows[0]);
 
-                            corredor corredorSeleccionado = cor.GetCorredorById(corredorSeleccionadoVW.CorredorId);
+                            corredor corredorSeleccionado = cor.GetCorredorByNId(corredorSeleccionadoVW.CorredorId);
                            
                             cor.Remove(corredorSeleccionado);
 

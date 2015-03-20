@@ -80,6 +80,14 @@
           <Property Name="vuelta" Type="int" Nullable="false" />
           <Property Name="tiempo_diferencia" Type="time" Precision="0" Nullable="false" />
         </EntityType>
+        <EntityType Name="tiempo_alterno">
+          <Key>
+            <PropertyRef Name="tiempo_alterno_id" />
+          </Key>
+          <Property Name="tiempo_alterno_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numero_corredor" Type="int" Nullable="false" />
+          <Property Name="tiempo_corredor" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
         <Association Name="fk_carrera_inicio_categoria_carrera1">
           <End Role="carrera" Type="Self.carrera" Multiplicity="1" />
           <End Role="carrera_inicio_categoria" Type="Self.carrera_inicio_categoria" Multiplicity="*" />
@@ -196,6 +204,7 @@
           <EntitySet Name="corredor" EntityType="Self.corredor" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="has_carrera" EntityType="Self.has_carrera" Schema="cmctj" store:Type="Tables" />
           <EntitySet Name="tiempo" EntityType="Self.tiempo" Schema="cmctj" store:Type="Tables" />
+          <EntitySet Name="tiempo_alterno" EntityType="Self.tiempo_alterno" Schema="cmctj" store:Type="Tables" />
           <AssociationSet Name="fk_carrera_inicio_categoria_carrera1" Association="Self.fk_carrera_inicio_categoria_carrera1">
             <End Role="carrera" EntitySet="carrera" />
             <End Role="carrera_inicio_categoria" EntitySet="carrera_inicio_categoria" />
@@ -447,6 +456,7 @@
             <End Role="categoria" EntitySet="categoria" />
             <End Role="carrera_inicio_categoria" EntitySet="carrera_inicio_categoria" />
           </AssociationSet>
+          <EntitySet Name="tiempo_alterno" EntityType="cmctjModel.tiempo_alterno" />
         </EntityContainer>
         <EntityType Name="carrera_inicio_categoria">
           <Key>
@@ -483,6 +493,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tiempo_alterno">
+          <Key>
+            <PropertyRef Name="tiempo_alterno_id" />
+          </Key>
+          <Property Name="tiempo_alterno_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numero_corredor" Type="Int32" Nullable="false" />
+          <Property Name="tiempo_corredor" Type="DateTime" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -568,6 +586,15 @@
                 <ScalarProperty Name="carrera_id" ColumnName="carrera_id" />
                 <ScalarProperty Name="tiempo_inicio_carrera" ColumnName="tiempo_inicio_carrera" />
                 <ScalarProperty Name="carrera_inicio_categoria_id" ColumnName="carrera_inicio_categoria_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiempo_alterno">
+            <EntityTypeMapping TypeName="cmctjModel.tiempo_alterno">
+              <MappingFragment StoreEntitySet="tiempo_alterno">
+                <ScalarProperty Name="tiempo_corredor" ColumnName="tiempo_corredor" />
+                <ScalarProperty Name="numero_corredor" ColumnName="numero_corredor" />
+                <ScalarProperty Name="tiempo_alterno_id" ColumnName="tiempo_alterno_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

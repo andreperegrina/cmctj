@@ -36,15 +36,14 @@ namespace cmctj.Corredor
         public void LlenarFormulario()
         {
 
-            //TODO: Validar número
             CorredorManager nuevoCorredor = new CorredorManager();
             corredor nuevo = new corredor();
-            nuevo = nuevoCorredor.GetCorredorById((int)SessionData.Instance["corredor_id_editar"]);
+            nuevo = nuevoCorredor.GetCorredorByNId((int)SessionData.Instance["corredor_id_editar"]);
             txtId.Text = nuevo.numero.ToString();
             txtNombre.Text = nuevo.nombre;
             txtPaterno.Text = nuevo.apellido_paterno;
             txtMaterno.Text = nuevo.apellido_materno;
-            dtFecha.DateTime = nuevo.fecha;
+            dtFecha.DateTime = DateTime.Today;
             dtFechaNacimiento.DateTime = nuevo.fecha_nacimiento;
             txtCorreo.Text = nuevo.correo;
             txtFacebook.Text = nuevo.facebook;
@@ -132,11 +131,13 @@ namespace cmctj.Corredor
             else
                 sex = 1;
 
+
+
             CorredorManager nuevoCorredor = new CorredorManager();
             corredor nuevo = new corredor();
             if (SessionData.Instance["corredor_id_editar"] != null)
             {
-                nuevo = nuevoCorredor.GetCorredorById((int)SessionData.Instance["corredor_id_editar"]);
+                nuevo = nuevoCorredor.GetCorredorByNId((int)SessionData.Instance["corredor_id_editar"]);
                 
             }
             nuevo.club_id = (int)clubID;
@@ -161,6 +162,16 @@ namespace cmctj.Corredor
 
             if (SessionData.Instance["corredor_id_editar"] == null)
             {
+
+                WrapperManager nuevoWrap = new WrapperManager();
+                if (nuevoWrap.GetBuscaCorredorById(numero) >= 0)
+                {
+                    errPrValidar.SetError(txtId, "Número repetido");
+                    txtNombre.Focus();
+                    this.DialogResult = DialogResult.None;
+                    return;
+
+                }
 
                 nuevoCorredor.Save(nuevo);
             }

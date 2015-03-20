@@ -11,6 +11,12 @@ namespace CMCTJ.BusinessLogic.Manager
     {
         public corredor GetCorredorById(int corredorID)
         {
+            return entityDAO.Find(e=>e.numero==corredorID);
+        }
+
+        
+        public corredor GetCorredorByNId(int corredorID)
+        {
             return entityDAO.Find(e=>e.corredor_id==corredorID);
         }
     }

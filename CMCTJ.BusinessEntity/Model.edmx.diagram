@@ -21,6 +21,7 @@
         <EntityTypeShape EntityType="cmctjModel.carrera_inicio_categoria" Width="1.5" PointX="5.25" PointY="7.375" />
         <AssociationConnector Association="cmctjModel.fk_carrera_inicio_categoria_carrera1" />
         <AssociationConnector Association="cmctjModel.fk_carrera_inicio_categoria_categoria1" />
+        <EntityTypeShape EntityType="cmctjModel.tiempo_alterno" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

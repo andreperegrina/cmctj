@@ -26,6 +26,22 @@ namespace CMCTJ.BusinessLogic.Manager
             return categoriaWrapperDAO.executeQuery("select categoria_id as categoriaid,nombre,descripcion,alias from categoria");
         }
 
+        public List<CategoriaWrapper> GetAllCategoriaWrapperNoIniciado()
+        {
+            DataAccess<CategoriaWrapper> categoriaWrapperDAO = new DataAccess<CategoriaWrapper>();
+
+            //Se tendra que crear por cada uno de los catálogos
+
+
+            //Codigo para probar
+            //List<CategoriaWrapper> newList = new List<CategoriaWrapper>();
+            //newList.Add(new CategoriaWrapper() {Nombre="Categoria 1",Descripcion="Cat",CategoriaId=1 });
+            //return newList;
+            //CODIGO REAL
+
+            return categoriaWrapperDAO.executeQuery("select categoria_id as categoriaid,nombre,descripcion,alias from categoria where !(categoria_id in (select categoria_id from carrera_inicio_categoria)) ");
+        }
+
         public List<ClubWrapper> GetAllClubWrapper()
         {
             DataAccess<ClubWrapper> clubWrapperDAO = new DataAccess<ClubWrapper>();
@@ -42,6 +58,12 @@ namespace CMCTJ.BusinessLogic.Manager
             return tiempoWrapperDAO.executeQuery("SELECT * FROM corredores_vw");
         }
 
+        public List<CorredorTiempoReporte> GetAllCorredorTiempoReporteWrapper()
+        {
+            DataAccess<CorredorTiempoReporte> tiempoWrapperDAO = new DataAccess<CorredorTiempoReporte>();
+            return tiempoWrapperDAO.executeQuery("SELECT * FROM corredores_tiempo_vw");
+        }
+
         public List<CarreraIniciadaWrapper> GetAllCarreraIniciadaWrapper()
         {
             DataAccess<CarreraIniciadaWrapper> carreraIniciadaWrapperDAO = new DataAccess<CarreraIniciadaWrapper>();
@@ -54,6 +76,25 @@ namespace CMCTJ.BusinessLogic.Manager
             List<CorredorWrapper> carreraIniciadaWrapperDAOexecuteQuery = carreraIniciadaWrapperDAO.executeQuery(String.Format("select buscar_corredor({0}) as corredorid", corredor_id));
             return carreraIniciadaWrapperDAOexecuteQuery.FirstOrDefault().CorredorId;
         
+        }
+
+
+        public int GetBuscaCarreraIniciada(int carrera_id)
+        {
+            DataAccess<CorredorWrapper> carreraIniciadaWrapperDAO = new DataAccess<CorredorWrapper>();
+            List<CorredorWrapper> carreraIniciadaWrapperDAOexecuteQuery = carreraIniciadaWrapperDAO.executeQuery(String.Format("select buscar_carrera_iniciada({0}) as corredorid", carrera_id));
+            return carreraIniciadaWrapperDAOexecuteQuery.FirstOrDefault().CorredorId;
+
+        }
+
+
+
+        public List<CorredorTiempoWrapper> GetReporteGanadores()
+        {
+            DataAccess<CorredorTiempoWrapper> carreraIniciadaWrapperDAO = new DataAccess<CorredorTiempoWrapper>();
+            List<CorredorTiempoWrapper> carreraIniciadaWrapperDAOexecuteQuery = carreraIniciadaWrapperDAO.executeQuery(String.Format("select * from corredores_tiempos_finales_vw"));
+            return carreraIniciadaWrapperDAOexecuteQuery;
+
         }
     }
 }

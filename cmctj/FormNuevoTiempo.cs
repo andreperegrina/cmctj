@@ -27,22 +27,40 @@ namespace cmctj
             String numeroCorredor=txtEditNumero.Text;
             int numeroResultado=-1;
             bool esNumero=Int32.TryParse(numeroCorredor,out numeroResultado);
-            //TODO:AGREGAR CORREDOR
             if (esNumero && numeroResultado != -1)
             {
                 WrapperManager wrapperManager = new WrapperManager();
                 if (wrapperManager.GetBuscaCorredorById(numeroResultado) >= 0)
                 {
                     int? carreraID = (int?)SessionData.Instance["carrera_actual_id"];
+
                     CorredorManager corredorManager = new CorredorManager();
                     corredor corredorSeleccionado = corredorManager.GetCorredorById(numeroResultado);
-                    TiempoManager managerTiempo = new TiempoManager();
-                    managerTiempo.RegistrarTiempo(corredorSeleccionado, carreraID.Value);
-                    txtEditNumero.Text = "";
+                    if (wrapperManager.GetBuscaCarreraIniciada(corredorSeleccionado.categoria_id) > 0)
+                    {
+
+                        TiempoManager managerTiempo = new TiempoManager();
+                        managerTiempo.RegistrarTiempo(corredorSeleccionado, carreraID.Value);
+                        txtEditNumero.Text = "";
+
+                    }
+                    else
+                    {
+                        lbMensajeError.Text = String.Format("Error la carrera de este corredor aún no ha iniciado", numeroResultado);
+
+                    }
                 }
                 else
                 {
-                   lbMensajeError.Text = "Error no se encontro corredor";
+                    tiempo_alterno nuevo = new tiempo_alterno()
+                    {
+                        numero_corredor=numeroResultado,
+                        tiempo_corredor = DateTime.Now
+                    };
+                    TiempoAlternoManager n = new TiempoAlternoManager();
+                    n.Save(nuevo);
+                    lbMensajeError.Text = String.Format("Error no se encontro corredor {0} y se guardo en la tabla alterna", numeroResultado);
+                    txtEditNumero.Text="";
                 }
             }
             else

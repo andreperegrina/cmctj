@@ -123,6 +123,56 @@ namespace cmctj
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            foreach (var item in gcDxTiempo.ViewCollection)
+            {
+                if (item.GetType() == typeof(GridView))
+                {
+                    GridView grdview = (GridView)item as GridView;
+                    int[] selectedRows = grdview.GetSelectedRows();
+                    if (selectedRows.Length > 0)
+                    {
+                        DialogResult seleccion = MessageBox.Show("¿Realmente deseas eliminar este tiempo?", "Atención!!!", MessageBoxButtons.OKCancel);
+
+                        if (seleccion == DialogResult.OK)
+                        {
+
+                            CarreraInicioCategoriaManager cor = new CarreraInicioCategoriaManager();
+
+                            CarreraIniciadaWrapper corredorSeleccionadoVW = (CarreraIniciadaWrapper)gridView1.GetRow(selectedRows[0]);
+
+                            carrera_inicio_categoria corredorSeleccionado = cor.GetById(corredorSeleccionadoVW.CarreraInicioCategoriaId);
+
+                            cor.Remove(corredorSeleccionado);
+
+                            grdview.FocusedRowHandle = selectedRows[0];
+
+                            MessageBox.Show("Se elimino el tiempo", "Atención");
+                            ActualizaDatosCategoria();
+
+                        }
+                    }
+                    break;
+                }
+            }
+
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (Reporte.FormReporteTiempo nuevoTiempo = new Reporte.FormReporteTiempo())
+            {
+                nuevoTiempo.ShowDialog();
+            }
+
+
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (Corredor.FormTiempoCorredor nuevoTiempo = new Corredor.FormTiempoCorredor())
+            {
+                nuevoTiempo.ShowDialog();
+            }
 
         }
     }

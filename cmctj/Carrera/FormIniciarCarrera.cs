@@ -17,10 +17,9 @@ namespace cmctj.Carrera
     {
         public FormIniciarCarrera()
         {
-            //TODO: AGregar solo busqueda por alias
             InitializeComponent();
             WrapperManager nuevoWrapperManager = new WrapperManager();
-            sglueDxCategoria.Properties.DataSource = nuevoWrapperManager.GetAllCategoriaWrapper();
+            sglueDxCategoria.Properties.DataSource = nuevoWrapperManager.GetAllCategoriaWrapperNoIniciado();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

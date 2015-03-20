@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCTJ.BusinessEntity", "CMC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Data", "Common.Data\Common.Data.csproj", "{72285754-6766-4B70-B703-C1B28B19E30F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMCTJ.Report", "CMCTJ.Report\CMCTJ.Report.csproj", "{1EB83F98-030C-45FD-BD74-CAC58A89868A}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -35,6 +37,10 @@ Global
 		{72285754-6766-4B70-B703-C1B28B19E30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72285754-6766-4B70-B703-C1B28B19E30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72285754-6766-4B70-B703-C1B28B19E30F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB83F98-030C-45FD-BD74-CAC58A89868A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB83F98-030C-45FD-BD74-CAC58A89868A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB83F98-030C-45FD-BD74-CAC58A89868A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB83F98-030C-45FD-BD74-CAC58A89868A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
