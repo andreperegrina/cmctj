@@ -152,5 +152,80 @@ namespace cmctj.Corredor
 
             }
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            foreach (var item in gcDxCorredores.ViewCollection)
+            {
+                if (item.GetType() == typeof(GridView))
+                {
+                    GridView grdview = (GridView)item as GridView;
+                    int[] selectedRows = grdview.GetSelectedRows();
+                    if (selectedRows.Length > 0)
+                    {
+                        DialogResult seleccion = MessageBox.Show("¿Realmente deseas eliminar este corredor?", "Atención!!!", MessageBoxButtons.OKCancel);
+
+                        if (seleccion == DialogResult.OK)
+                        {
+
+                            CorredorManager cor = new CorredorManager();
+
+                            CorredorWrapper corredorSeleccionadoVW = (CorredorWrapper)grdview.GetRow(selectedRows[0]);
+
+                            corredor corredorSeleccionado = cor.GetCorredorByNId(corredorSeleccionadoVW.CorredorId);
+
+                            corredorSeleccionado.activo = 1;
+                            cor.Update(corredorSeleccionado);
+
+                            grdview.FocusedRowHandle = selectedRows[0];
+
+                            MessageBox.Show("Se activo el corredor", "Atención");
+                            ActualizarDatos();
+
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+
+            foreach (var item in gcDxCorredores.ViewCollection)
+            {
+                if (item.GetType() == typeof(GridView))
+                {
+                    GridView grdview = (GridView)item as GridView;
+                    int[] selectedRows = grdview.GetSelectedRows();
+                    if (selectedRows.Length > 0)
+                    {
+                        DialogResult seleccion = MessageBox.Show("¿Realmente deseas eliminar este corredor?", "Atención!!!", MessageBoxButtons.OKCancel);
+
+                        if (seleccion == DialogResult.OK)
+                        {
+
+                            CorredorManager cor = new CorredorManager();
+
+                            CorredorWrapper corredorSeleccionadoVW = (CorredorWrapper)grdview.GetRow(selectedRows[0]);
+
+                            corredor corredorSeleccionado = cor.GetCorredorByNId(corredorSeleccionadoVW.CorredorId);
+
+                            corredorSeleccionado.activo = 0;
+                            cor.Update(corredorSeleccionado);
+
+                            grdview.FocusedRowHandle = selectedRows[0];
+
+                            MessageBox.Show("Se activo el corredor", "Atención");
+                            ActualizarDatos();
+
+                        }
+                    }
+                    break;
+                }
+            }
+        }
     }
 }
