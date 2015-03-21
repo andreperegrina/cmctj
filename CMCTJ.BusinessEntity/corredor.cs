@@ -33,6 +33,7 @@ namespace CMCTJ.BusinessEntity
         public int sexo { get; set; }
         public int categoria_id { get; set; }
         public int numero { get; set; }
+        public Nullable<sbyte> activo { get; set; }
     
         public virtual categoria categoria { get; set; }
         public virtual club club { get; set; }
